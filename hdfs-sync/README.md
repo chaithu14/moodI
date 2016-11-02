@@ -2,7 +2,7 @@
 This application moves files from the configured source path and transfers them to the destination file path.
 
 ![Launch App Properties](https://lh3.googleusercontent.com/SzQZ1g9l9sHkBKZfaXC4BuQ37Ne1lxfqWxaiA2DWuWaBbkumq0Wy5lD9V4fJSQbfg-FQbFhVz-XpSZE=w1871-h966-rw)
-![Logical Plan](https://lh6.googleusercontent.com/nivgMuNaAG4j_7pIJZFrA4mQlmeKsmxRuQbyWkCx9Xnb4a8ytjikRsjOGdoDlqBu9DFNHEaF-SWmqhk=w1871-h966-rw)
+![Logical Plan](https://lh4.googleusercontent.com/fAvm4LnQolqyUUQG9w1fFZhCnfhGpek3X2a5b6G5Ei_YaBRuhIkg-mLpX6Ju7SRqUSwT2oCd1zjQXLg=w1871-h966-rw)
 
 
 ### Jumpstart - Import and run application template as an operable proof of concept

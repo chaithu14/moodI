@@ -30,10 +30,7 @@
 
   <!-- change these to the appropriate values -->
   <name>Database dump to HDFS App</name>
-  <description>Ingest records from a DataBase table to hadoop HDFS. 
-  This application reads messages from configured MySQL table and writes each record as a comma separated line in HDFS files. 
-  The source code is available at: https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs. 
-  Send feedback or feature requests to: feedback@datatorrent.com</description>
+  <description>Ingest records from a Database table to hadoop HDFS.</description>
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
