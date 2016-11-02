@@ -20,40 +20,69 @@
 
 -->
 <configuration>
-    <!-- Static partitioning, specify the partition count, this decides how 
-        many ranges would be initiated -->
+  <!-- 
   <property>
-      <name>dt.operator.JdbcPoller.prop.partitionCount</name>
-      <value>4</value>
+    <name>dt.application.{appName}.operator.{opName}.prop.{propName}</name>
+    <value>some-default-value (if value is not specified, it is required from the user or custom config when launching)</value>
   </property>
-  
-  <!-- Batch size for poller -->
+  -->
+  <!-- memory assigned to app master
   <property>
-      <name>dt.operator.JdbcPoller.prop.batchSize</name>
-      <value>300</value>
+    <name>dt.attr.MASTER_MEMORY_MB</name>
+    <value>1024</value>
   </property>
-
-  <!-- look-up key for forming range queries, this would be the column name 
-      on which the table is sorted -->
+  -->
   <property>
-      <name>dt.operator.JdbcPoller.prop.key</name>
-      <value>ACCOUNT_NO</value>
-  </property>
-
-  <property>
-      <name>dt.operator.JdbcPoller.prop.columnsExpression</name>
-      <value>ACCOUNT_NO,NAME,AMOUNT</value>
+    <name>dt.operator.recordReader.prop.files</name>
+    <value>src/test/resources/test_event_data.txt</value>
   </property>
   <property>
-    <name>dt.operator.JdbcPoller.port.outputPort.attr.TUPLE_CLASS</name>
+    <name>dt.operator.fileOutput.prop.outputFileName</name>
+    <value>output.txt</value>
+  </property>
+  <property>
+    <name>dt.attr.CHECKPOINT_WINDOW_COUNT</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.maxIdleWindows</name>
+    <value>2</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.maxIdleWindows</name>
+    <value>2</value>
+  </property>
+  <property>
+    <name>dt.operator.recordReader.prop.blocksThreshold</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "lineDelimiter": "",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
-
-  <property>
-      <name>dt.operator.JdbcPoller.prop.pollInterval</name>
-      <value>1000</value>
-  </property>
-
   <property>
     <name>dt.operator.formatter.prop.schema</name>
     <value>{
@@ -92,3 +121,4 @@
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
 </configuration>
+
