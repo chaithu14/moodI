@@ -1,12 +1,9 @@
 ### Description
 This application moves files from the configured source path and transfers them to the destination file path.
 
-<div class="images">
-
 ![Launch App Properties](https://drive.google.com/open?id=0B_F1TOOx-1HzTTVEaFRWM3dSWnc/preview)
 ![Logical Plan](https://drive.google.com/file/d/0B_F1TOOx-1HzVWJ1OTBCd0FWR2s/preview)
 
-</div>
 
 ### Jumpstart - Import and run application template as an operable proof of concept
 <iframe src="https://drive.google.com/file/d/0B82FOOrgd6sHN1RnMDBtTGJJNWM/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
