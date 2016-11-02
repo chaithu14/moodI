@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package com.datatorrent.apps.copy;
+package com.datatorrent.apps;
 
 import org.apache.hadoop.conf.Configuration;
 
