@@ -41,4 +41,68 @@
     <name>dt.attr.MASTER_MEMORY_MB</name>
     <value>768</value>
   </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "lineDelimiter": "",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "lineDelimiter": "",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  
+  <!--Uncomment this block to use transform operator-->
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
 </configuration>

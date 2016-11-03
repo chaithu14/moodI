@@ -19,27 +19,14 @@
     under the License.
 
 -->
-
 <configuration>
   <property>
-    <name>dt.operator.recordReader.prop.minReaders</name>
-    <value>1</value>
+    <name>dt.operator.*.attr.MEMORY_MB</name>
+    <value>512</value>
   </property>
   <property>
-    <name>dt.operator.recordReader.prop.maxReaders</name>
-    <value>16</value>
-  </property>
-  <property>
-    <name>dt.operator.recordReader.prop.blocksThreshold</name>
-    <value>1</value>
-  </property>
-  <property>
-    <name>dt.operator.recordReader.prop.blockSize</name>
-    <value>1048576</value>
-  </property>
-  <property>
-    <name>dt.operator.kafkaOutput.attr.PARTITIONER</name>
-    <value>com.datatorrent.common.partitioner.StatelessPartitioner:16</value>
+    <name>dt.attr.MASTER_MEMORY_MB</name>
+    <value>768</value>
   </property>
   <!--Uncomment this block to customize the application-->
   <property>
