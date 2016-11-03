@@ -19,9 +19,11 @@
 
 package com.datatorrent.apps;
 
+import java.io.File;
 import java.util.Map;
 
 import org.apache.apex.malhar.lib.fs.FSRecordReaderModule;
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Maps;
@@ -62,7 +64,7 @@ public class Application implements StreamingApplication
      * Adding operators: 
      * CsvParser csvParser = dag.addOperator("csvParser", CsvParser.class);
      *
-     * TransformOperator transform = dag.addOperator("Transform", new TransformOperator());
+     * TransformOperator transform = dag.addOperator("transform", new TransformOperator());
      * Map<String, String> expMap = Maps.newHashMap();
      * expMap.put("name", "{$.name}.toUpperCase()");
      * transform.setExpressionMap(expMap);
@@ -83,9 +85,10 @@ public class Application implements StreamingApplication
      * Replace the following line below
      * dag.addStream("data", lineReader.records, out.inputPort);
      * 
-     * with the following two lines
+     * with these lines
      * dag.addStream("record", lineReader.records, csvParser.in);
-     * dag.addStream("pojo", csvParser.out, formatter.in);
+     * dag.addStream("pojo", csvParser.out, transform.input);
+     * dag.addStream("transformed", transform.output, formatter.in);
      * dag.addStream("string", formatter.out, kafkaOutput.inputPort);
      *
      * In properties.xml, properties-test.xml->dt.operator.kafkaOutput.prop.producerProperties 
@@ -94,9 +97,11 @@ public class Application implements StreamingApplication
      * with
      * serializer.class=kafka.serializer.StringEncoder
      * 
-     * In ApplicationTests.java->dt.operator.kafkaOutput.prop.producerProperties 
-     * Replace
-     * test_events.txt with test_events_transformed.txt
+     * In ApplicationTests.java->
+     * Replace the following line below 
+     * FileUtils.readFileToString(new File("src/test/resources/test_events.txt")).split("\\n");
+     * with
+     * FileUtils.readFileToString(new File("src/test/resources/test_events_transformed.txt")).split("\\n");
      * 
      */    
     

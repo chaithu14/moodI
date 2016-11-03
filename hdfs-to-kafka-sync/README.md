@@ -1,5 +1,5 @@
 ### Description
-  This application lines from configured HDFS path and writes each line as a message in configured Apache Kafka topic.
+  This application lines from configured HDFS path and writes each line as a message in configured Apache Kafka topic. This application is designed for Kafka 0.8 as destination.
 
 ![Launch App Properties](https://lh5.googleusercontent.com/n5ZgFb8habyfG2SPNZXTA5C5R3DuRmUUhJxo7NHNyta0_HQ9hJW3TV_X31CUeEAbzPCIr_xRH83A89A=w1871-h966-rw)
 ![Logical Plan](https://lh4.googleusercontent.com/fvsCAZGAw_sllfJL_8Bt-Pn5SRIhF3CxeVNe7Tm6yfdiEU-QrrXpchtIxFyhURtyxY21uju-QiOa9t0=w1871-h966-rw)
