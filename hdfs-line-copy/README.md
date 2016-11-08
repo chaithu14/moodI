@@ -1,5 +1,5 @@
 ### Description
-The HDFS to HDFS line copy Application Template continuously ingests files as lines from between Hadoop clusters retaining one-to-one file traceability.
+The HDFS to HDFS line copy Application Template continuously ingests files as lines from one Hadoop cluster to other retaining one-to-one file traceability.
 - The application scales linearly with number of record readers.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can perform as fast as the network allows.
