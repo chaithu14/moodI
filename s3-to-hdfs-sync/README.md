@@ -6,7 +6,7 @@ The S3 to HDFS Sync Application Template continuously ingests files as blocks fr
 - The only configuration user needs to provide is source S3 connection parameters, bucket, directory and destination HDFS path, filename.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Download the application from DataTorrent AppHub and launch it to ingest your files from Amazon S3 to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and run it.
+Import the application from DataTorrent AppHub and launch it to ingest your files from Amazon S3 to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and run it.
 
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=gA2eNL1wTCA) to import and launch the application.
