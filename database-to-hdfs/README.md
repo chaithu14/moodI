@@ -1,5 +1,5 @@
 ### Description
-The Database dump to HDFS Application Template continuously polls records from configured MySQL table and writes records as comma separated lines in HDFS file(s). It first does a bulk upload from the configured table parallely and continuously polls at configured poll internal for new records.
+The Database dump to HDFS Application Template continuously polls records from configured MySQL table and writes records as comma separated lines in HDFS file(s). It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records.
 - The application scales linearly with the number of poller partitions.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
