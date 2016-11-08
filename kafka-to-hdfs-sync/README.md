@@ -1,13 +1,13 @@
 ### Description
 The Kafka to HDFS Application Template continuously reads messages from configured Apache Kafka topic(s) and writes each message as a line in Hadoop HDFS file(s).
-- The application scales linearly with the number of Kafka brokers and Kafka topics. 
+- The application scales linearly with the number of Kafka brokers and Kafka topics.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process faster than Kafka broker can produce per topic.
 - It is extremely easy to add custom logic to get your business value without worrying about connectivity and operational details of Kafka consumer and HDFS writer.
-- The only configuration user needs to provide is Kafka broker list, topic list, HDFS path and filename.
+- The only configuration user needs to provide is source Kafka broker list, topic list and destination HDFS path, filename.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Download the application and launch it to read your data from Kafka topics and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Download the application from DataTorrent AppHub and launch it to read your data from Kafka topics and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=d0RSeazfjN8) to import and launch the application.
