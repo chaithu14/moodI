@@ -1,21 +1,50 @@
 ### Description
- This application reads messages from configured kafka topic and writes each message as a line in HDFS files.
+The Kafka to HDFS Application Template continuously reads messages from configured Apache Kafka topic(s) and writes each message as a line in Hadoop HDFS file(s).
+- The application scales linearly with the number of Kafka brokers and Kafka topics. 
+- The application is fault tolerant and can withstand node and cluster outages without data loss.
+- The application is also highly performant and can process faster than Kafka broker can produce per topic.
+- It is extremely easy to add custom logic to get your business value without worrying about connectivity and operational details of Kafka consumer and HDFS writer.
+- The only configuration user needs to provide is Kafka broker list, topic list, HDFS path and filename.
+- This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-![Launch App Properties](https://lh3.googleusercontent.com/sE_XN7Mxu8rFfeFx11P4t9vS1BJyZBksRtSxwQVZATuRylP6qanQ0CEqvE9ldy_DI3XShxFX_iKvW58=w1329-h660-rw)
-![Logical Plan](https://lh6.googleusercontent.com/iOFO4fdQFcm2I61UI6GP70rLVdO96zVOLbhWo_0ZFvQYR7rL7oZedM2Mht-jO7FDeih2RWwI9J6aEDc=w1329-h660-rw)
+Download the application and launch it to read your data from Kafka topics and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
+### Jumpstart
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=d0RSeazfjN8) to import and launch the application.
 
-### Jumpstart - Import and run application template as an operable proof of concept
-<iframe src="https://drive.google.com/file/d/0B82FOOrgd6sHN1RnMDBtTGJJNWM/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/d0RSeazfjN8?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
-Walkthrough docs: <a href="https://github.com/yogidevendra/docs/blob/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/kafka-to-hdfs-sync.md"  class="docs" id="docs" ga-track="docs" target="_blank">Walkthrough doc</a>
+### Productize
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=ftMiPECgyDQ) to add custom logic to the application template.
 
-### Productize - Add custom logic to the application template and launch
+<iframe src="https://www.youtube.com/embed/ftMiPECgyDQ?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
-<iframe src="https://drive.google.com/file/d/0B_F1TOOx-1Hzai1LcUxtMDdwNTQ/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+### Logical Plan
 
-GitHub URL for app template: <a href="https://github.com/DataTorrent/app-templates/tree/master/kafka-to-hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">Source code</a>
+Here is a preview of the logical plan of the application template
 
-Please send feedback or feature requests to: <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/11/Kafka_to_HDFS_DAG.png)
 
-Google Groups: <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+### Launch App Properties
+
+Here is a preview of the properties to be set at application launch
+
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/11/Kafka_to_HDFS_properties.png)
+
+### Resources
+
+Please find the walkthrough docs for app template as follows:
+
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/kafka-to-hdfs-sync"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/kafka-to-hdfs-sync</a>
+
+Please find the GitHub URL for app template as follows:
+
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/kafka-to-hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/kafka-to-hdfs-sync</a>
+
+Please send feedback or feature requests to:
+
+&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+
+Please join the user discussion groups:
+
+&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
