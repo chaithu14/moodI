@@ -7,7 +7,7 @@ The HDFS to HDFS line copy Application Template continuously ingests files as li
 - The only configuration user needs to provide is source and destination HDFS paths.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Download the application from DataTorrent AppHub and launch it to ingest data from one Hadoop cluster to another.  Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Import the application from DataTorrent AppHub and launch it to ingest data from one Hadoop cluster to another.  Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=z20xzkQeJho) to import and launch the application.
