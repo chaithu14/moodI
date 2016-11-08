@@ -1,32 +1,50 @@
 ### Description
-This application read lines from the configured source path and writes them to the destination file path.
+The HDFS to HDFS line copy Application Template continuously ingests files as lines from between Hadoop clusters retaining one-to-one file traceability.
+- The application scales linearly with number of record readers.
+- The application is fault tolerant and can withstand node and cluster outages without data loss.
+- The application is also highly performant and can perform as fast as the network allows.
+- It is extremely easy to add custom logic to get your business value without worrying about connectivity and operational details of HDFS reader or writer.
+- The only configuration user needs to provide is source and destination HDFS paths.
+- This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
+Download the application from DataTorrent AppHub and launch it to ingest data from one Hadoop cluster to another.  Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
-![Launch App Properties](https://lh3.googleusercontent.com/bsXAHBnBlEWu9VrDQOabx6cnKYXvcdWsiBRym-USCXHgqs4hou8-3Euxm9G4huEWYkONpXZW40yksoY=w1329-h660-rw)
+### Jumpstart
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=z20xzkQeJho) to import and launch the application.
 
-![Logical Plan](https://lh4.googleusercontent.com/p4oCOYmKVDsW9jFHJLifSsbQLABg0H44HN1-sCxnjLDh35JvoaebNTLUQMVgx9ap3I3tv2Nv1VjztLI=w1329-h660-rw)
+<iframe src="https://www.youtube.com/embed/z20xzkQeJho?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
+### Productize
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=SqG9janTCX0) to add custom logic to the application template.
 
+<iframe src="https://www.youtube.com/embed/SqG9janTCX0?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
-### Jumpstart - Import and run application template as an operable proof of concept
+### Logical Plan
 
-<iframe src="https://drive.google.com/file/d/0B_F1TOOx-1HzanYyNkZHaVhhVTQ/preview?enablejsapi=1"  allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+Here is a preview of the logical plan of the application template
 
-Walkthrough docs: <a href="https://github.com/yogidevendra/docs/blob/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/hdfs-line-copy.md"  class="docs" id="docs" ga-track="docs" target="_blank">Walkthrough doc</a>
+![Logical Plan](http://datatorrent.com/wp-content/uploads/2016/11/HDFS_HDFS_Line_Copy_DAG.png)
 
-### Productize - Add custom logic to the application template and launch
+### Launch App Properties
 
-<iframe src="https://drive.google.com/file/d/0B_F1TOOx-1Hzai1LcUxtMDdwNTQ/preview?enablejsapi=1"  allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+Here is a preview of the properties to be set at application launch
 
-GitHub URL for app template: <a href="https://github.com/DataTorrent/app-templates/tree/master/hdfs-line-copy"  class="github" id="github" ga-track="github" target="_blank">Source code</a>
+![Launch App Properties](http://datatorrent.com/wp-content/uploads/2016/11/HDFS_HDFS_Line_Copy_properties.png)
 
-Please send feedback or feature requests to: <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+### Resources
 
-Google Groups: <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+Please find the walkthrough docs for app template as follows:
 
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/hdfs-line-copy/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/hdfs-line-copy/</a>
 
+Please find the GitHub URL for app template as follows:
 
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/hdfs-line-copy"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/hdfs-line-copy</a>
 
+Please send feedback or feature requests to:
 
+&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
 
+Please join the user discussion groups:
 
+&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
