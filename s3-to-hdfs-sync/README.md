@@ -1,17 +1,44 @@
 ### Description
- This application moves files from the configured S3 location and moves them to the destination path in HDFS.
+The S3 to HDFS Sync Application Template continuously ingests files as blocks from the configured Amazon S3 location to the destination path in HDFS retaining one-to-one file traceability.
+- The application scales linearly with number of block readers.
+- The application is fault tolerant and can withstand node and cluster outages without data loss.
+- The application is also highly performant and can perform as fast as the network bandwidth allows.
+- The only configuration user needs to provide is source S3 connection parameters, bucket, directory and destination HDFS path, filename.
+- This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-![Launch App Properties](https://lh5.googleusercontent.com/n5ZgFb8habyfG2SPNZXTA5C5R3DuRmUUhJxo7NHNyta0_HQ9hJW3TV_X31CUeEAbzPCIr_xRH83A89A=w1871-h966-rw)
-![Logical Plan](https://lh4.googleusercontent.com/fvsCAZGAw_sllfJL_8Bt-Pn5SRIhF3CxeVNe7Tm6yfdiEU-QrrXpchtIxFyhURtyxY21uju-QiOa9t0=w1871-h966-rw)
+Download the application from DataTorrent AppHub and launch it to ingest your files from Amazon S3 to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and run it.
 
+### Jumpstart
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=gA2eNL1wTCA) to import and launch the application.
 
-### Jumpstart - Import and run application template as an operable proof of concept
-<iframe src="https://drive.google.com/file/d/0B82FOOrgd6sHN1RnMDBtTGJJNWM/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/gA2eNL1wTCA?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
-Walkthrough docs: <a href="https://github.com/yogidevendra/docs/blob/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/s3-to-hdfs-sync.md"  class="docs" id="docs" ga-track="docs" target="_blank">Walkthrough doc</a>
+### Logical Plan
 
-GitHub URL for app template: <a href="https://github.com/DataTorrent/app-templates/tree/master/s3-to-hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">Source code</a>
+Here is a preview of the logical plan of the application template
 
-Please send feedback or feature requests to: <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+![Logical Plan](http://datatorrent.com/wp-content/uploads/2016/11/S3_HDFS_Sync_App_DAG.png)
 
-Google Groups: <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+### Launch App Properties
+
+Here is a preview of the properties to be set at application launch
+
+![Launch App Properties](http://datatorrent.com/wp-content/uploads/2016/11/S3_HDFS_Sync_App_properties.png)
+
+### Resources
+
+Please find the walkthrough docs for app template as follows:
+
+&nbsp; <a href="http://http://docs.datatorrent.com/app-templates/s3-to-hdfs-sync/"  class="docs" id="docs" ga-track="docs" target="_blank">http://http://docs.datatorrent.com/app-templates/s3-to-hdfs-sync/</a>
+
+Please find the GitHub URL for app template as follows:
+
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/s3-to-hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/s3-to-hdfs-sync</a>
+
+Please send feedback or feature requests to:
+
+&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+
+Please join the user discussion groups:
+
+&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
