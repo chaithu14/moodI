@@ -1,3 +1,4 @@
+### Description
 The HDFS to HDFS Sync Application Template continuously ingests files as blocks from one Hadoop cluster to another retaining one-to-one file traceability.
 - The application scales linearly with number of block readers.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
