@@ -1,17 +1,43 @@
-### Description
-This application moves files from the configured source path and transfers them to the destination file path.
+The HDFS to HDFS Sync Application Template continuously ingests files as blocks from one Hadoop cluster to another retaining one-to-one file traceability.
+- The application scales linearly with number of block readers.
+- The application is fault tolerant and can withstand node and cluster outages without data loss.
+- The application is also highly performant and can perform as fast as the network bandwidth allows.
+- The only configuration user needs to provide is source and destination HDFS paths.
+- This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-![Launch App Properties](https://lh3.googleusercontent.com/SzQZ1g9l9sHkBKZfaXC4BuQ37Ne1lxfqWxaiA2DWuWaBbkumq0Wy5lD9V4fJSQbfg-FQbFhVz-XpSZE=w1871-h966-rw)
-![Logical Plan](https://lh4.googleusercontent.com/fAvm4LnQolqyUUQG9w1fFZhCnfhGpek3X2a5b6G5Ei_YaBRuhIkg-mLpX6Ju7SRqUSwT2oCd1zjQXLg=w1871-h966-rw)
+Download the application from DataTorrent AppHub and launch it to ingest data from one Hadoop cluster to another. Follow the tutorial videos or walkthrough document below to launch the template and run it.
 
+### Jumpstart
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=KWcEvyNtyLI) to import and launch the application.
 
-### Jumpstart - Import and run application template as an operable proof of concept
-<iframe src="https://drive.google.com/file/d/0B82FOOrgd6sHN1RnMDBtTGJJNWM/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/KWcEvyNtyLI?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
-Walkthrough docs: <a href="https://github.com/yogidevendra/docs/blob/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/hdfs-sync.md"  class="docs" id="docs" ga-track="docs" target="_blank">Walkthrough doc</a>
+### Logical Plan
 
-GitHub URL for app template: <a href="https://github.com/DataTorrent/app-templates/tree/master/hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">Source code</a>
+Here is a preview of the logical plan of the application template
 
-Please send feedback or feature requests to: <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+![Logical Plan](http://datatorrent.com/wp-content/uploads/2016/11/HDFS_DAG.png)
 
-Google Groups: <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+### Launch App Properties
+
+Here is a preview of the properties to be set at application launch
+
+![Launch App Properties](http://datatorrent.com/wp-content/uploads/2016/11/HDFS_properties.png)
+
+### Resources
+
+Please find the walkthrough docs for app template as follows:
+
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/hdfs-sync/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/hdfs-sync/</a>
+
+Please find the GitHub URL for app template as follows:
+
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/hdfs-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/hdfs-sync</a>
+
+Please send feedback or feature requests to:
+
+&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+
+Please join the user discussion groups:
+
+&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
