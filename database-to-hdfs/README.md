@@ -1,26 +1,50 @@
 ### Description
-This application reads messages from configured MySQL table and writes each record as a comma separated line in HDFS files.
+The Database dump to HDFS Application Template continuously polls records from configured MySQL table and writes records as comma separated lines in HDFS file(s). It first does a bulk upload from the configured table parallely and continuously polls at configured poll internal for new records.
+- The application scales linearly with the number of poller partitions.
+- The application is fault tolerant and can withstand node and cluster outages without data loss.
+- The application is also highly performant and can process as fast as the network allows.
+- It is extremely easy to add custom logic to get your business value without worrying about database connectivity and operational details of database poller and HDFS writer.
+- The only configuration user needs to provide is source database connection details, table and destination HDFS path, filename.
+- This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
+Download the application from DataTorrent AppHub and launch it to ingest your data from your MySQL table and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
+### Jumpstart
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=F0arSlih73A) to import and launch the application.
 
-![Launch App Properties](https://github.com/yogidevendra/docs/raw/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/images/database-to-hdfs/property-editor.png)
+<iframe src="https://www.youtube.com/embed/F0arSlih73A?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
-![Logical Plan](https://github.com/yogidevendra/docs/raw/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/images/database-to-hdfs/DAG.png)
+### Productize
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=702HBqsLgJ4) to add custom logic to the application template.
 
+<iframe src="https://www.youtube.com/embed/702HBqsLgJ4?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
+### Logical Plan
 
-### Jumpstart - Import and run application template as an operable proof of concept
+Here is a preview of the logical plan of the application template
 
-<iframe src="https://drive.google.com/file/d/0B_F1TOOx-1HzanYyNkZHaVhhVTQ/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+![Logical Plan](http://datatorrent.com/wp-content/uploads/2016/11/Database_HDFS_DAG.png)
 
-Walkthrough docs: <a href="https://github.com/yogidevendra/docs/blob/SPOI-9416-docs-dthub-apps-1to6/docs/app-templates/database-to-hdfs.md"  class="docs" id="docs" ga-track="docs" target="_blank">Database dump to HDFS app: Walkthrough doc</a>
+### Launch App Properties
 
-### Productize - Add custom logic to the application template and launch
+Here is a preview of the properties to be set at application launch
 
-<iframe src="https://drive.google.com/file/d/0B_F1TOOx-1Hzai1LcUxtMDdwNTQ/preview?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+![Launch App Properties](http://datatorrent.com/wp-content/uploads/2016/11/Database_HDFS_properties.png)
 
-GitHub URL for app template: <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">Source code</a>
+### Resources
 
-Please send feedback or feature requests to: <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+Please find the walkthrough docs for app template as follows:
 
-Google Groups: <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-hdfs/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-hdfs/</a>
+
+Please find the GitHub URL for app template as follows:
+
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs</a>
+
+Please send feedback or feature requests to:
+
+&nbsp; <a href="mailto:feedback@datatorrent.com"  class="feedback" id="feedback" ga-track="feedback">feedback@datatorrent.com</a>
+
+Please join the user discussion groups:
+
+&nbsp; <a href="mailto:dt-users@googlegroups.com"  class="maillist" id="maillist" ga-track="maillist">dt-users@googlegroups.com</a>
