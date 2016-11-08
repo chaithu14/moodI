@@ -7,7 +7,7 @@ The HDFS to Kafka Application Template continuously reads lines from configured 
 - The only configuration user needs to provide is source HDFS path and destination Kafka broker list, topic.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Download the application from DataTorrent AppHub and launch it to read your data from HDFS and write to Kafka. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Import the application from DataTorrent AppHub and launch it to read your data from HDFS and write to Kafka. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=AZ-QnsiNwyg) to import and launch the application.
