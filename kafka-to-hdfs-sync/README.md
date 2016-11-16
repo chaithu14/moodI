@@ -1,5 +1,6 @@
 ### Description
 The Kafka to HDFS Application Template continuously reads messages from configured Apache Kafka topic(s) and writes each message as a line in Hadoop HDFS file(s).
+- The size of the files and rotation policy can be configured. So no small file problem in HDFS.
 - The application scales linearly with the number of Kafka brokers and Kafka topics.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process faster than Kafka broker can produce per topic.
