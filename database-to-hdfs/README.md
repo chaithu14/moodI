@@ -1,5 +1,5 @@
 ### Description
-The Database dump to HDFS Application Template continuously polls records from configured MySQL table and writes records as comma separated lines in HDFS file(s). It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records.
+The Database dump to HDFS Application Template continuously polls records from configured PostgreSQL table and writes records as comma separated lines in HDFS file(s). It first does a bulk upload from the configured table parallely and continuously polls at configured poll interval for new records.
 - The application scales linearly with the number of poller partitions.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
@@ -7,7 +7,7 @@ The Database dump to HDFS Application Template continuously polls records from c
 - The only configuration user needs to provide is source database connection details, table and destination HDFS path, filename.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
-Import the application from DataTorrent AppHub and launch it to ingest your data from your MySQL table and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
+Import the application from DataTorrent AppHub and launch it to ingest your data from your PostgreSQL table and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=F0arSlih73A) to import and launch the application.

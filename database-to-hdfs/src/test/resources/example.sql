@@ -17,27 +17,32 @@
  * under the License.
  */
 
-DROP DATABASE IF EXISTS testDev;
+/**
+ * Cleanup and create new database.
+ */
+DROP DATABASE IF EXISTS testdb;
 
-CREATE DATABASE testDev;
+CREATE DATABASE testdb;
 
-USE testDev;
+/**
+ * Connect to database and create table along with some values.
+ */
+\c testdb;
 
-CREATE TABLE IF NOT EXISTS `test_event_table` (
-  `ACCOUNT_NO` int(11) NOT NULL,
-  `NAME` varchar(255) DEFAULT NULL,
-  `AMOUNT` int(11) DEFAULT NULL,
-  primary key(`ACCOUNT_NO`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS test_event_table (
+  ACCOUNT_NO integer PRIMARY KEY NOT NULL,
+  NAME varchar(255) DEFAULT NULL,
+  AMOUNT integer DEFAULT NULL
+);
 
-INSERT INTO `test_event_table` (`ACCOUNT_NO`, `NAME`, `AMOUNT`) VALUES
-(1, 'User1', 1000),
-(2, 'User2', 2000),
-(3, 'User3', 3000),
-(4, 'User4', 4000),
-(5, 'User5', 5000),
-(6, 'User6', 6000),
-(7, 'User7', 7000),
-(8, 'User8', 8000),
-(9, 'User9', 9000),
-(10, 'User10', 1000);
+INSERT INTO test_event_table (ACCOUNT_NO, NAME, AMOUNT) VALUES
+(1, 'User11', 1000),
+(2, 'User12', 2000),
+(3, 'User13', 3000),
+(4, 'User14', 4000),
+(5, 'User15', 5000),
+(6, 'User16', 6000),
+(7, 'User17', 7000),
+(8, 'User18', 8000),
+(9, 'User19', 9000),
+(10, 'User110', 1000);

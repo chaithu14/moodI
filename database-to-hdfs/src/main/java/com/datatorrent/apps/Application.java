@@ -100,9 +100,9 @@ public class Application implements StreamingApplication
      * 
      * Also, update TUPLE_CLASS property from the xml configuration files.
      */
-    fieldInfos.add(new FieldInfo("ACCOUNT_NO", "accountNumber", SupportType.INTEGER));
-    fieldInfos.add(new FieldInfo("NAME", "name", SupportType.STRING));
-    fieldInfos.add(new FieldInfo("AMOUNT", "amount", SupportType.INTEGER));
+    fieldInfos.add(new FieldInfo("account_no", "accountNumber", SupportType.INTEGER));
+    fieldInfos.add(new FieldInfo("name", "name", SupportType.STRING));
+    fieldInfos.add(new FieldInfo("amount", "amount", SupportType.INTEGER));
     return fieldInfos;
   }
 }

@@ -23,22 +23,22 @@
 <configuration>
     <property>
         <name>dt.operator.JdbcPoller.prop.store.databaseDriver</name>
-        <value>com.mysql.jdbc.Driver</value>
+        <value>org.postgresql.Driver</value>
     </property>
 
     <property>
         <name>dt.operator.JdbcPoller.prop.store.databaseUrl</name>
-        <value>jdbc:mysql://localhost:3306/testDev</value>
+        <value>jdbc:postgresql://localhost:5432/testdb</value>
     </property>
 
     <property>
         <name>dt.operator.JdbcPoller.prop.store.userName</name>
-        <value>root</value>
+        <value>postgres</value>
     </property>
     
     <property>
         <name>dt.operator.JdbcPoller.prop.store.password</name>
-        <value>mysql</value>
+        <value>postgres</value>
     </property>
 
     <!-- Table name -->

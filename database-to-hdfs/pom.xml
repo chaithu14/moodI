@@ -37,7 +37,7 @@
     <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <malhar.version>3.5.0</malhar.version>
-    <apex.apppackage.tags>app-template, db, hdfs, mysql, sync</apex.apppackage.tags>
+    <apex.apppackage.tags>app-template, db, hdfs, PostgreSQL, sync</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
   </properties>
 
@@ -311,11 +311,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.36</version>
-    </dependency>
-    <dependency>
       <groupId>org.jooq</groupId>
       <artifactId>jooq</artifactId>
       <version>3.6.4</version>
@@ -326,9 +321,9 @@
       <version>2.7.8</version>
     </dependency>
     <dependency>
-      <groupId>org.hsqldb</groupId>
-      <artifactId>hsqldb</artifactId>
-      <version>2.3.1</version>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.4.1208.jre7</version>
     </dependency>
 
   </dependencies>

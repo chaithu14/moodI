@@ -46,8 +46,8 @@ import com.datatorrent.apps.Application;
 
 public class ApplicationTest
 {
-  private static final String DB_DRIVER = "org.hsqldb.jdbcDriver";
-  private static final String URL = "jdbc:hsqldb:mem:test;sql.syntax_mys=true";
+  private static final String DB_DRIVER = "org.postgresql.Driver";
+  private static final String URL = "jdbc:postgresql://localhost:5432/testdb?user=postgres&password=postgres";
   private static final String TABLE_NAME = "test_event_table";
 
   private String outputDir;
