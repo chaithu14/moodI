@@ -22,7 +22,7 @@
 <configuration>
   <property>
     <name>dt.operator.kafkaInput.prop.clusters</name>
-    <value>localhost:9092</value>
+    <value>localhost:19092</value>
   </property> 
   <property>
     <name>dt.operator.kafkaInput.prop.topics</name>
@@ -46,7 +46,72 @@
   </property>
   <property>
     <name>dt.operator.fileOutput.prop.maxIdleWindows</name>
-    <value>2</value>
+    <value>10</value>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>{
+    "separator": "|",
+    "quoteChar": "\"",
+    "lineDelimiter": "",
+    "fields": [
+        {
+            "name": "accountNumber",
+            "type": "Integer"
+        },
+        {
+            "name": "name",
+            "type": "String"
+        },
+        {
+            "name": "amount",
+            "type": "Integer"
+        }
+      ]
+  }
+  </value>
+  </property>   
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property> 
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.filter.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
   </property>
 </configuration>
 
