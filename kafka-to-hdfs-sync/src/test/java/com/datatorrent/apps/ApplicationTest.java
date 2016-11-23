@@ -55,11 +55,8 @@ import static org.junit.Assert.assertTrue;
 public class ApplicationTest
 {
   private static final Logger LOG = LoggerFactory.getLogger(ApplicationTest.class);
-  //  private static final String TOPIC = "kafka2hdfs";
-
   private static final int zkPort = 12181;
   private static final int brokerPort = 19092;
-  private static final String BROKER = "localhost:" + brokerPort;
   private String outputDir;
   private String outputFilePath;
   private String topic;
