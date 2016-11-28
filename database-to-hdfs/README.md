@@ -29,7 +29,7 @@ Here is a preview of the logical plan of the application template
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](http://datatorrent.com/wp-content/uploads/2016/11/Database_HDFS_properties.png)
+![Launch App Properties](https://lh3.googleusercontent.com/nCBStR3hwRXphxs5DQ4dORHYgvtq22LM2PfbO-XQpY4JUo1issZ2tzJZPgvaq5YF9DakGMgW3Ljk4O8=w1887-h985)
 
 ### Resources
 
