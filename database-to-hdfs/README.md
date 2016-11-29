@@ -29,7 +29,7 @@ Here is a preview of the logical plan of the application template
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://lh3.googleusercontent.com/nCBStR3hwRXphxs5DQ4dORHYgvtq22LM2PfbO-XQpY4JUo1issZ2tzJZPgvaq5YF9DakGMgW3Ljk4O8=w1887-h985)
+![Launch App Properties](https://lh5.googleusercontent.com/QLQSpfvYmFpjF9McqIC4Zs_9FVwhOjL-KVgF2mt6bJ-qiJTaMf66FiE3E4Ihmcpr4olsT4Phu9PuAB4=w1887-h985)
 
 ### Resources
 

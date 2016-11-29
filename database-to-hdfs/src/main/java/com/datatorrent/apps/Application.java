@@ -36,7 +36,7 @@ import com.datatorrent.lib.db.jdbc.JdbcStore;
 import com.datatorrent.lib.util.FieldInfo;
 import com.datatorrent.lib.util.FieldInfo.SupportType;
 
-@ApplicationAnnotation(name = "Database-to-HDFS")
+@ApplicationAnnotation(name = "Database-to-HDFS-Sync")
 public class Application implements StreamingApplication
 {
   public void populateDAG(DAG dag, Configuration conf)

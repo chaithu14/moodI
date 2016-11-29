@@ -23,23 +23,23 @@ Add custom logic to the application template and launch. Please watch the [walkt
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](https://drive.google.com/open?id=0B1WP4D3UdO_tdnI5b3EyTk1iLUk)
+![Logical Plan](https://lh3.googleusercontent.com/r2pL8OqFMf7AEXnb1Ns1zVPOwBDLVZjOXCgd4KVVO0qQqr2gSZLKsgCWTv2HGedmfwQi0vEZyHeNYno=w1887-h985)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://drive.google.com/open?id=0B1WP4D3UdO_tTG82aVkyV0Qyblk)
+![Launch App Properties](https://lh3.googleusercontent.com/4IkgZNuU3vcABXbyTkPyZYpqUZxusjLpgaqJHMTzvztyAzQnn4Sm739STzPssnfFMfta7IAxLd2wHxw=w1887-h985)
 
 ### Resources
 
 Please find the walkthrough docs for app template as follows:
 
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-hdfs/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-hdfs/</a>
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/kafka-to-database-sync"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/kafka-to-database-sync</a>
 
 Please find the GitHub URL for app template as follows:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs</a>
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/kafka-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/kafka-to-database-sync</a>
 
 Please send feedback or feature requests to:
 

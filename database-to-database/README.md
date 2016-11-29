@@ -23,23 +23,23 @@ Add custom logic to the application template and launch. Please watch the [walkt
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](https://drive.google.com/open?id=0B1WP4D3UdO_tdnI5b3EyTk1iLUk)
+![Logical Plan](https://lh4.googleusercontent.com/ndjrVaSvD3-pzWA6sdyuNjYuJQzyYNgM8Tn0zQ6PKVE3bV99Pv0Y1QCEexU4snLC_-RY_HXCcRBYUik=w1887-h985)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://drive.google.com/open?id=0B1WP4D3UdO_tTG82aVkyV0Qyblk)
+![Launch App Properties](https://lh5.googleusercontent.com/2ApMgu81aMs9Vgcdr5i1G6-MvpCW7_MtG92sI-j7QB3gt4OWMYfRghrjhRF-Pv1hYdBuiC2twnwIjE8=w1887-h985)
 
 ### Resources
 
 Please find the walkthrough docs for app template as follows:
 
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-hdfs/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-hdfs/</a>
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-database/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-database/</a>
 
 Please find the GitHub URL for app template as follows:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-hdfs</a>
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-database"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-database</a>
 
 Please send feedback or feature requests to:
 
