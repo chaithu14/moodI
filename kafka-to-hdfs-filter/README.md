@@ -1,6 +1,5 @@
 ### Description
 This Kafka to HDFS Filter Application continuously reads string messages separated by '|' from configured kafka topic(s), filters based on the filter criteria and writes each message as a line in HDFS file(s). This application uses PoJoEvent as an example schema, this can be customized to use custom schema based on specific needs.
-
 - The application scales linearly with the number of Kafka brokers and Kafka topics.
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process faster than Kafka broker can produce per topic.
