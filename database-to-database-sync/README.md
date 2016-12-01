@@ -35,11 +35,11 @@ Here is a preview of the properties to be set at application launch
 
 Please find the walkthrough docs for app template as follows:
 
-&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-database/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-database/</a>
+&nbsp; <a href="http://docs.datatorrent.com/app-templates/database-to-database-sync/"  class="docs" id="docs" ga-track="docs" target="_blank">http://docs.datatorrent.com/app-templates/database-to-database-sync/</a>
 
 Please find the GitHub URL for app template as follows:
 
-&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-database"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-database</a>
+&nbsp; <a href="https://github.com/DataTorrent/app-templates/tree/master/database-to-database-sync"  class="github" id="github" ga-track="github" target="_blank">https://github.com/DataTorrent/app-templates/tree/master/database-to-database-sync</a>
 
 Please send feedback or feature requests to:
 

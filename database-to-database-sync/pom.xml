@@ -4,7 +4,7 @@
   
   <groupId>com.datatorrent.apps</groupId>
   <version>0.8</version>
-  <artifactId>database-to-database</artifactId>
+  <artifactId>database-to-database-sync</artifactId>
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
