@@ -86,7 +86,7 @@ public class Application implements StreamingApplication
      * with this lines:
      * outputFilePath = outputDir + "/output.txt_6.0";
      * 
-     * Replace following line in waitForOutputTuples() method:
+     * Replace following line in compare() method:
      * Assert.assertArrayEquals(lines_filtered, output.split("\\n"));
      * with this lines:
      * Assert.assertArrayEquals(lines_transformed, output.split("\\n"));

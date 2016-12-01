@@ -125,10 +125,10 @@ public class ApplicationTest
       LocalMode.Controller lc = asyncRun(conf);
 
       // check for presence of output file
-      chkOutput();
+      waitForOutputTuples();
 
       // compare output lines to input
-      waitForOutputTuples();
+      compare();
 
       lc.shutdown();
     } catch (ConstraintViolationException e) {
@@ -167,7 +167,7 @@ public class ApplicationTest
     return lc;
   }
 
-  private void chkOutput() throws Exception
+  private void waitForOutputTuples() throws Exception
   {
     File file = new File(outputFilePath);
     final int MAX = 60;
@@ -181,7 +181,7 @@ public class ApplicationTest
     }
   }
 
-  private void waitForOutputTuples() throws Exception
+  private void compare() throws Exception
   {
     // read output file
     File file = new File(outputFilePath);
