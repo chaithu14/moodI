@@ -32,6 +32,16 @@
         <value>org.postgresql.Driver</value>
     </property>
 
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.userName</name>
+    <value>postgres</value>
+  </property>
+
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.password</name>
+    <value>postgres</value>
+  </property>
+
     <property>
         <name>dt.operator.JdbcPoller.prop.store.databaseUrl</name>
         <value>jdbc:postgresql://localhost:5432/testdb</value>
