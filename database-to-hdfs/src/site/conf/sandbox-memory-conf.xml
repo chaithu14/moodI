@@ -24,7 +24,7 @@
         many ranges would be initiated -->
     <property>
         <name>dt.operator.JdbcPoller.prop.partitionCount</name>
-        <value>4</value>
+        <value>1</value>
     </property>
     
     <!-- Batch size for poller -->
@@ -81,13 +81,15 @@
     <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
-  <!--Uncomment this block to use transform operator-->
-  <!--property>
+
+  <property>
     <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
+
   <property>
     <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
-  </property-->
+  </property>
+
 </configuration>

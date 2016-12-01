@@ -58,16 +58,15 @@
     <name>dt.operator.JdbcOutput.port.input.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
-  <!--Uncomment this block to use transform operator-->
-  <!--
+
   <property>
     <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
+
   <property>
     <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
-  -->
 
 </configuration>

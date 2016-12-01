@@ -20,10 +20,12 @@
 package com.datatorrent.apps;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
@@ -34,6 +36,7 @@ import com.datatorrent.lib.db.jdbc.JdbcPOJOInsertOutputOperator;
 import com.datatorrent.lib.db.jdbc.JdbcPOJOPollInputOperator;
 import com.datatorrent.lib.db.jdbc.JdbcStore;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
+import com.datatorrent.lib.transform.TransformOperator;
 import com.datatorrent.lib.util.FieldInfo;
 
 @ApplicationAnnotation(name="DataBase-to-DataBase-Sync")
@@ -92,7 +95,7 @@ public class Application implements StreamingApplication
      *
      * with the following two lines:
      * dag.addStream("JdbcInput-to-Transformer", jdbcInputOperator.outputPort, transform.input);
-     * dag.addStream("transformed", transform.output, jdbcOutputOperator.input));
+     * dag.addStream("transformed", transform.output, jdbcOutputOperator.input);
      *
      */
   }
