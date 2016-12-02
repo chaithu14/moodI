@@ -9,7 +9,7 @@
 
   <!-- change these to the appropriate values -->
   <name>DataBase to DataBase Sync App</name>
-  <description>Ingest messages from source Database table to destination Database table.</description>
+  <description>Ingest messages from a source PostgreSQL Database table to destination PostgreSQL database table.</description>
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->

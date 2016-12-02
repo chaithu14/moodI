@@ -30,7 +30,7 @@
 
   <!-- change these to the appropriate values -->
   <name>Database dump to HDFS App</name>
-  <description>Ingest records from a Database table to hadoop HDFS.</description>
+  <description>Ingest records from a PostgreSQL Database table to hadoop HDFS.</description>
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->

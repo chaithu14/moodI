@@ -158,11 +158,15 @@ public class ApplicationTest
        */
       validateTuples();
 
-      cleanTable();
       lc.shutdown();
     } catch (ConstraintViolationException e) {
       Assert.fail("constraint violations: " + e.getConstraintViolations());
     }
+  }
+
+  @Test
+  public void teardown() {
+    cleanTable();
   }
 
   private LocalMode.Controller asyncRun(Configuration conf) throws Exception
@@ -212,7 +216,7 @@ public class ApplicationTest
       Collections.sort(ouputTuples,comparator);
 
       for (int i = 0; i < inputTuples.size(); i++) {
-        Assert.assertEquals("Row mismatch", inputTuples.get(i), ouputTuples.get(i));
+        Assert.assertEquals("Row mismatch", inputTuples.get(i)[0], ouputTuples.get(i)[0]);
       }
       DbUtils.close(conn);
     } catch (Exception e) {
@@ -233,7 +237,6 @@ public class ApplicationTest
     }
     return 0;
   }
-
 
   private void waitForOutputTuples() throws Exception
   {
