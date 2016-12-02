@@ -32,6 +32,7 @@ import java.util.List;
 
 import javax.validation.ConstraintViolationException;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -164,8 +165,8 @@ public class ApplicationTest
     }
   }
 
-  @Test
-  public void teardown() {
+  @AfterClass
+  public static void teardown() {
     cleanTable();
   }
 
