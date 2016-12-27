@@ -10,26 +10,26 @@ This Kafka to HDFS Filter Application continuously reads string messages separat
 Import the application from DataTorrent AppHub and launch it to read your data from Kafka topics, filters based on the filter criteria and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=d0RSeazfjN8) to import and launch the application.
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=taHc_QJUfBg) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/d0RSeazfjN8?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/taHc_QJUfBg?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=ftMiPECgyDQ) to add custom logic to the application template.
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=S6CB4XgRHCE) to add custom logic to the application template.
 
-<iframe src="https://www.youtube.com/embed/ftMiPECgyDQ?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/S6CB4XgRHCE?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
 ### Logical Plan
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](https://lh6.googleusercontent.com/n2UQ9vKyfhYXbHHk7rixm3Plj1BQFfYBWo7lw6GS1vI_9fhnc4eAo4ZI4xoSBRMzsJiHotwr0dLGAb8=w1887-h985)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_hdfs_filter_DAG.png)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://lh6.googleusercontent.com/U62sNo00kJzaeiz4ZFNBZCNyIooCDsVYo8686bYIbNEOmL-q8dauf86Si-82fQw-BFr0hekTmyoDkmE=w1887-h985)
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_hdfs_filter_properties.png)
 
 ### Resources
 

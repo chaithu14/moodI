@@ -10,14 +10,14 @@ The Database dump to HDFS Application Template continuously polls records from c
 Import the application from DataTorrent AppHub and launch it to ingest your data from your PostgreSQL table and write to HDFS. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=F0arSlih73A) to import and launch the application.
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=KQchMhLJZGk) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/F0arSlih73A?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/KQchMhLJZGk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=702HBqsLgJ4) to add custom logic to the application template.
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=Ltq520gzAuU) to add custom logic to the application template.
 
-<iframe src="https://www.youtube.com/embed/702HBqsLgJ4?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/Ltq520gzAuU?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
 ### Logical Plan
 
@@ -29,7 +29,7 @@ Here is a preview of the logical plan of the application template
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://lh5.googleusercontent.com/QLQSpfvYmFpjF9McqIC4Zs_9FVwhOjL-KVgF2mt6bJ-qiJTaMf66FiE3E4Ihmcpr4olsT4Phu9PuAB4=w1887-h985)
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/db_dump_to_hdfs_properties.png)
 
 ### Resources
 

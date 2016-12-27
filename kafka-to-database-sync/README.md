@@ -11,26 +11,26 @@ The Kafka to Database Sync Application ingest string messages seperated by '|' f
 Import the application from DataTorrent AppHub and launch it to ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=F0arSlih73A) to import and launch the application.
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=u8mbUrcsYOk) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/F0arSlih73A?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/u8mbUrcsYOk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=702HBqsLgJ4) to add custom logic to the application template.
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=iEwDGNrqaOo) to add custom logic to the application template.
 
-<iframe src="https://www.youtube.com/embed/702HBqsLgJ4?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/iEwDGNrqaOo?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
 ### Logical Plan
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](https://lh3.googleusercontent.com/r2pL8OqFMf7AEXnb1Ns1zVPOwBDLVZjOXCgd4KVVO0qQqr2gSZLKsgCWTv2HGedmfwQi0vEZyHeNYno=w1887-h985)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_db_sync_DAG.png)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://lh3.googleusercontent.com/4IkgZNuU3vcABXbyTkPyZYpqUZxusjLpgaqJHMTzvztyAzQnn4Sm739STzPssnfFMfta7IAxLd2wHxw=w1887-h985)
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/kafka_to_db_sync_properties.png)
 
 ### Resources
 

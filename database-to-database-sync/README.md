@@ -10,26 +10,26 @@ The Database to Database Sync Application records from configured source Postgre
 Import the application from DataTorrent AppHub and launch it to ingest your data from your PostgreSQL table and insert into output PostgreSQL table. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
 ### Jumpstart
-Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=F0arSlih73A) to import and launch the application.
+Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=EEvRMALP1nk) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/F0arSlih73A?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/EEvRMALP1nk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
-Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=702HBqsLgJ4) to add custom logic to the application template.
+Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=yktB0ZX43mM) to add custom logic to the application template.
 
-<iframe src="https://www.youtube.com/embed/702HBqsLgJ4?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/yktB0ZX43mM?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
 ### Logical Plan
 
 Here is a preview of the logical plan of the application template
 
-![Logical Plan](https://lh4.googleusercontent.com/ndjrVaSvD3-pzWA6sdyuNjYuJQzyYNgM8Tn0zQ6PKVE3bV99Pv0Y1QCEexU4snLC_-RY_HXCcRBYUik=w1887-h985)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_DAG.png)
 
 ### Launch App Properties
 
 Here is a preview of the properties to be set at application launch
 
-![Launch App Properties](https://lh5.googleusercontent.com/2ApMgu81aMs9Vgcdr5i1G6-MvpCW7_MtG92sI-j7QB3gt4OWMYfRghrjhRF-Pv1hYdBuiC2twnwIjE8=w1887-h985)
+![Launch App Properties](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_properties.png)
 
 ### Resources
 
