@@ -225,6 +225,8 @@ public class ApplicationTest
   private void compare() throws Exception
   {
     try {
+      String[] inputLines = lines;
+
       /*
        * Initialization of database connection.
        */
@@ -240,7 +242,7 @@ public class ApplicationTest
       /*
        * Validate number of tuples of input and output operators.
        */
-      Assert.assertTrue("Number of rows mismatch", lines.length == ouputTuples.size());
+      Assert.assertTrue("Number of rows mismatch", inputLines.length == ouputTuples.size());
 
       /*
        * Validate tuple contents of input and output operators.
@@ -255,8 +257,8 @@ public class ApplicationTest
       };
       Collections.sort(ouputTuples, comparator);
 
-      for (int i = 0; i < lines.length; i++) {
-        String[] fields = lines[i].split("\\|");
+      for (int i = 0; i < inputLines.length; i++) {
+        String[] fields = inputLines[i].split("\\|");
         Assert.assertEquals(Integer.parseInt(fields[0]), ouputTuples.get(i)[0]);
         Assert.assertEquals(fields[1], ouputTuples.get(i)[1]);
         Assert.assertEquals(Integer.parseInt(fields[2]), ouputTuples.get(i)[2]);
@@ -265,7 +267,6 @@ public class ApplicationTest
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
   }
 
   @After

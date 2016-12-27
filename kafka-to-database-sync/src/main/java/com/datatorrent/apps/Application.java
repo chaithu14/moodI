@@ -91,6 +91,14 @@ public class Application implements StreamingApplication
      * dag.addStream("pojo", csvParser.out, transform.input);
      * dag.addStream("transformed", transform.output, jdbcOutputOperator.input);
      * dag.setInputPortAttribute(transform.input, Context.PortContext.PARTITION_PARALLEL, true);
+     *
+     * In ApplicationTest.java
+     *
+     * Replace following line in compare() method:
+     * String[] inputLines = lines;
+     * with this lines:
+     * String[] inputLines = lines_transformed;
+     *
      */
   }
 
