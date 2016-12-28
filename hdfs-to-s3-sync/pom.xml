@@ -12,9 +12,11 @@
   <description>Ingest and backup hadoop HDFS data to Amazon S3 for data download from hadoop to Amazon.</description>
 
   <properties>
-    <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.5.0-SNAPSHOT</apex.version>
+    <apex.version>3.5.0</apex.version>
+    <malhar.version>3.7.0-SNAPSHOT</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
+    <apex.apppackage.tags>app-template, hdfs, s3, sync</apex.apppackage.tags>
+    <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
   </properties>
 
   <build>
@@ -260,19 +262,7 @@
     <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>malhar-library</artifactId>
-      <version>3.7.0-SNAPSHOT</version>
-      <!-- 
-           If you know that your application does not need transitive dependencies pulled in by malhar-library,
-           uncomment the following to reduce the size of your app package.
-      -->
-      <!--    
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-      -->
+      <version>${malhar.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.apex</groupId>

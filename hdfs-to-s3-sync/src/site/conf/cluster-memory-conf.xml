@@ -30,7 +30,7 @@
 
   <property>
     <name>dt.operator.HDFSInputModule.prop.minReaders</name>
-    <value>1</value>
+    <value>4</value>
   </property>
 
   <property>

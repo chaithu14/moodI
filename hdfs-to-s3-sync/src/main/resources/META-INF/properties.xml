@@ -34,5 +34,20 @@
     <value>s3n://ACCESS_KEY_ID:SECRET_KEY@BUCKET_NAME/OUTPUT-DIRECTORY</value>
   </property>
 
+  <property>
+    <name>dt.operator.S3OutputModule.prop.accessKey</name>
+    <value>ACCESS_KEY_ID</value>
+  </property>
+
+  <property>
+    <name>dt.operator.S3OutputModule.prop.secretAccessKey</name>
+    <value>SECRET_KEY</value>
+  </property>
+
+  <property>
+    <name>dt.operator.S3OutputModule.prop.bucketName</name>
+    <value>BUCKET_NAME</value>
+  </property>
+
 </configuration>
 
