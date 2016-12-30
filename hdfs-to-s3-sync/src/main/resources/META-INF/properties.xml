@@ -31,7 +31,7 @@
 
   <property>
     <name>dt.operator.S3OutputModule.prop.outputDirectoryPath</name>
-    <value>s3n://ACCESS_KEY_ID:SECRET_KEY@BUCKET_NAME/OUTPUT-DIRECTORY</value>
+    <value>OUTPUT-DIRECTORY</value>
   </property>
 
   <property>

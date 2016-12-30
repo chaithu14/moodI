@@ -9,7 +9,7 @@
 
   <!-- change these to the appropriate values -->
   <name>HDFS S3 Sync App</name>
-  <description>Ingest and backup hadoop HDFS data to Amazon S3 for data download from hadoop to Amazon.</description>
+  <description>Ingest and backup hadoop HDFS data to Amazon S3 for data upload from hadoop to Amazon.</description>
 
   <properties>
     <apex.version>3.5.0</apex.version>
