@@ -93,7 +93,7 @@ public class ApplicationTest
   public void setup() throws Exception
   {
     outputDir = testMeta.baseDirectory + File.separator + "output";
-    outputFilePath = outputDir + "/output.txt_6.0";
+    outputFilePath = outputDir + "/output.txt_5.0";
   }
 
   // test messages
@@ -186,6 +186,6 @@ public class ApplicationTest
     // read output file
     File file = new File(outputFilePath);
     String output = FileUtils.readFileToString(file);
-    Assert.assertArrayEquals(lines_transformed, output.split("\\n"));
+    Assert.assertArrayEquals(lines_filtered, output.split("\\n"));
   }
 }
