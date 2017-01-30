@@ -10,6 +10,10 @@ The Kafka to Database Sync Application ingest string messages seperated by '|' f
 
 Import the application from DataTorrent AppHub and launch it to ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
+### Tested with external sources
+- Input Source:- Kafka (version: 0.9)
+- Output Source:- PostgreSQL (version: 9.4.10)
+
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=u8mbUrcsYOk) to import and launch the application.
 

@@ -9,6 +9,10 @@ The Database to Database Sync Application records from configured source Postgre
 
 Import the application from DataTorrent AppHub and launch it to ingest your data from your PostgreSQL table and insert into output PostgreSQL table. Follow the tutorial videos or walkthrough document below to launch the template and add custom logic to process the data during ingestion.
 
+### Tested with external sources
+- Input Source:- PostgreSQL (version: 9.4.10)
+- Output Source:- PostgreSQL (version: 9.4.10)
+
 ### Jumpstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=EEvRMALP1nk) to import and launch the application.
 
