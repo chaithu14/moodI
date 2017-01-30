@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
-  <name>Kafka to DataBase Sync App</name>
+  <name>Kafka to Database Sync App</name>
   <description>Ingest messages from kafka to PostgreSQL Database table.</description>
 
   <properties>

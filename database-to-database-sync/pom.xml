@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
-  <name>DataBase to DataBase Sync App</name>
+  <name>Database to Database Sync App</name>
   <description>Ingest messages from a source PostgreSQL Database table to destination PostgreSQL database table.</description>
 
   <properties>

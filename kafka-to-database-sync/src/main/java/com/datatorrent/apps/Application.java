@@ -40,7 +40,7 @@ import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
 import com.datatorrent.lib.transform.TransformOperator;
 import com.datatorrent.lib.util.FieldInfo;
 
-@ApplicationAnnotation(name="Kafka-to-DataBase-Sync")
+@ApplicationAnnotation(name="Kafka-to-Database-Sync")
 public class Application implements StreamingApplication
 {
 
