@@ -21,13 +21,44 @@
 -->
 
 <configuration>
+
+  <property>
+    <name>apex.app-param.inputDirectoryOrFilePathOnS3</name>
+    <description>Specify input path of directory or file. E.g: s3n://ACCESS_KEY_ID:SECRET_KEY@BUCKET_NAME/DIRECTORY</description>
+  </property>
   <property>
     <name>dt.operator.S3InputModule.prop.files</name>
-     <value>s3n://ACCESS_KEY_ID:SECRET_KEY@BUCKET_NAME/DIRECTORY</value>
+    <value>${apex.app-param.inputDirectoryOrFilePath}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.outputDirectoryPathOnHDFS</name>
+    <description>Specify output directory path on HDFS. E.g: hdfs://destination-namenode-service:port/user/dtuser/path-to-output-directory</description>
   </property>
   <property>
-    <name>dt.operator.HDFSFileCopyModule.prop.outputDirectoryPath</name>
-    <value>hdfs://destination-namenode-service:port/path-to-output-directory</value>
+    <name>dt.operator.HDFSFileCopyModule.prop.filePath</name>
+    <value>${apex.app-param.outputDirectoryPath}</value>
   </property>
+
+  <property>
+    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
+    <value>16</value>
+    <description>Specify maximum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.S3InputModule.prop.maxReaders</name>
+    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfBlocksPerWindow</name>
+    <value>16</value>
+    <description>Specify number of blocks per window.</description>
+  </property>
+  <property>
+    <name>dt.operator.S3InputModule.prop.blocksThreshold</name>
+    <value>${apex.app-param.numberOfBlocksPerWindow}</value>
+  </property>
+
 </configuration>
 

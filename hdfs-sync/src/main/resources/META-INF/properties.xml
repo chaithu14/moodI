@@ -22,11 +22,41 @@
 
 <configuration>
   <property>
+    <name>apex.app-param.inputDirectoryOrFilePath</name>
+    <description>Specify input path of directory or file. E.g: hdfs://source-namenode-service/user/dtuser/path-to-input-directory</description>
+  </property>
+  <property>
     <name>dt.operator.HDFSInputModule.prop.files</name>
-    <value>hdfs://source-namenode-service/user/dtuser/path-to-input-directory</value>
+    <value>${apex.app-param.inputDirectoryOrFilePath}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.outputDirectoryPath</name>
+    <description>Specify output directory path on HDFS. E.g: hdfs://destination-namenode-service/user/dtuser/path-to-output-directory</description>
   </property>
   <property>
     <name>dt.operator.HDFSFileCopyModule.prop.outputDirectoryPath</name>
-    <value>hdfs://destination-namenode-service/user/dtuser/path-to-input-directory</value>
+    <value>${apex.app-param.outputDirectoryPath}</value>
   </property>
+
+  <property>
+    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
+    <value>16</value>
+    <description>Specify maximum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.maxReaders</name>
+    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfBlocksPerWindow</name>
+    <value>1</value>
+    <description>Specify number of blocks per window.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.blocksThreshold</name>
+    <value>${apex.app-param.numberOfBlocksPerWindow}</value>
+  </property>
+
 </configuration>

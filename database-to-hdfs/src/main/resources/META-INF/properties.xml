@@ -19,46 +19,224 @@
     under the License.
 
 -->
-
 <configuration>
-    <property>
-        <name>dt.operator.JdbcPoller.prop.store.databaseDriver</name>
-        <value>org.postgresql.Driver</value>
-    </property>
-
-    <property>
-        <name>dt.operator.JdbcPoller.prop.store.databaseUrl</name>
-        <value>jdbc:postgresql://localhost:5432/testdb</value>
-    </property>
-
-    <property>
-        <name>dt.operator.JdbcPoller.prop.store.userName</name>
-        <value>postgres</value>
-    </property>
-    
-    <property>
-        <name>dt.operator.JdbcPoller.prop.store.password</name>
-        <value>postgres</value>
-    </property>
-
-    <!-- Table name -->
-    <property>
-        <name>dt.operator.JdbcPoller.prop.tableName</name>
-        <value>test_event_table</value>
-    </property>
-    
-    <property>
-        <name>dt.operator.JdbcPoller.prop.whereCondition</name>
-        <value></value>
-    </property>
+  <property>
+    <name>apex.app-param.jdbcInputDatabaseDriver</name>
+    <value>org.postgresql.Driver</value>
+    <description>Specify Jdbc database driver for input database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.databaseDriver</name>
+    <value>${apex.app-param.jdbcInputDatabaseDriver}</value>
+  </property>
 
   <property>
+    <name>apex.app-param.jdbcInputDatabaseUrl</name>
+    <description>Specify Jdbc database URL driver for input database. E.g: jdbc:postgresql://localhost:5432/testdb</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.databaseUrl</name>
+    <value>${apex.app-param.jdbcInputDatabaseUrl}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jdbcInputStoreUsername</name>
+    <description>Specify Jdbc store username for input database. E.g: postgres</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.userName</name>
+    <value>${apex.app-param.jdbcInputStoreUsername}</value>
+  </property>
+
+
+  <property>
+    <name>apex.app-param.jdbcInputStorePassword</name>
+    <description>Specify Jdbc store password for input database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.store.password</name>
+    <value>${apex.app-param.jdbcInputStorePassword}</value>
+  </property>
+
+  <!-- Table name -->
+  <property>
+    <name>apex.app-param.jdbcInputTableName</name>
+    <description>Specify Jdbc input table name for input database. E.g: test_event_input_table</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.tableName</name>
+    <value>${apex.app-param.jdbcInputTableName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.whereCondition</name>
+    <value></value>
+    <description>Specify WHERE clause for input database. Note if blank value specified, all records would be selected</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.whereCondition</name>
+    <value>${apex.app-param.whereCondition}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.outputDirectoryPathOnHDFS</name>
+    <description>Specify output directory path on HDFS. E.g: hdfs://destination-namenode-service/user/dtuser/path-to-output-directory</description>
+  </property>
+  <property>
     <name>dt.operator.fileOutput.prop.filePath</name>
-    <value>/tmp</value>
+    <value>${apex.app-param.outputDirectoryPathOnHDFS}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.outputFileNameOnHDFS</name>
+    <description>Specify output directory path on HDFS. E.g: results.txt</description>
   </property>
   <property>
     <name>dt.operator.fileOutput.prop.outputFileName</name>
-    <value>output.txt</value>
+    <value>${apex.app-param.outputFileNameOnHDFS}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.numberOfPartitionRequired</name>
+    <value>4</value>
+    <description>Specify the partition count for Jdbc Input for static partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.partitionCount</name>
+    <value>${apex.app-param.numberOfPartitionRequired}</value>
+  </property>
+
+  <!-- Batch size for poller -->
+  <property>
+    <name>apex.app-param.batchSizeForJdbcInput</name>
+    <value>300</value>
+    <description>Specify the batch size for Jdbc Input.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.batchSize</name>
+    <value>${apex.app-param.batchSizeForJdbcInput}</value>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.batchSize</name>
+  </property>
+
+  <!-- look-up key for forming range queries, this would be the column name
+      on which the table is sorted -->
+  <property>
+    <name>dt.operator.JdbcPoller.prop.key</name>
+    <value>ACCOUNT_NO</value>
+  </property>
+
+  <property>
+    <name>dt.operator.JdbcPoller.prop.columnsExpression</name>
+    <value>ACCOUNT_NO,NAME,AMOUNT</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.uniqueKeyForRangeQueries</name>
+    <value>ACCOUNT_NO</value>
+    <description>Specify the unique key for range queries for Jdbc Input.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.key</name>
+    <value>${apex.app-param.uniqueKeyForRangeQueries}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.columnsExpressions</name>
+    <value>ACCOUNT_NO,NAME,AMOUNT</value>
+    <description>Specify the column expressions for Jdbc Input.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.columnsExpression</name>
+    <value>${apex.app-param.columnsExpressions}</value>
+  </property>
+
+  <property>
+    <name>dt.operator.JdbcPoller.port.outputPort.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForJdbcInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for jdbc input.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.port.outputPort.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForJdbcInput}</value>
+  </property>
+
+  <property>
+    <name>dt.operator.JdbcPoller.prop.pollInterval</name>
+    <value>1000</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.pollIntervalForJdbcInput</name>
+    <value>1000</value>
+    <description>Specify the poll interval for Jdbc input.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcPoller.prop.pollInterval</name>
+    <value>${apex.app-param.pollIntervalForJdbcInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvFormatterSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Formatter.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>${apex.app-param.csvFormatterSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForFormatterInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for formatter input.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForFormatterInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform input.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform output.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
 </configuration>

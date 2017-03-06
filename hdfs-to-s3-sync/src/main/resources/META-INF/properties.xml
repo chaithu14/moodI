@@ -25,28 +25,78 @@
    HDFS Input Module properties
   -->
   <property>
+    <name>apex.app-param.inputDirectoryOrFilePathOnHDFS</name>
+    <description>Specify input path of directory or file. E.g: hdfs://source-namenode-service:port/user/dtuser/path-to-input-directory</description>
+  </property>
+  <property>
     <name>dt.operator.HDFSInputModule.prop.files</name>
-    <value>hdfs://source-namenode-service:port/path-to-input-directory</value>
+    <value>${apex.app-param.inputDirectoryOrFilePathOnHDFS}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.outputDirectoryPathOnS3Storage</name>
+    <description>Specify output directory path on S3 Storage system.</description>
+  </property>
   <property>
     <name>dt.operator.S3OutputModule.prop.outputDirectoryPath</name>
-    <value>OUTPUT-DIRECTORY</value>
+    <value>${apex.app-param.outputDirectoryPathOnS3Storage}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.awsCredentialsAccessKeyId</name>
+    <description>Specify the AWS credentials AccessKeyId.</description>
+  </property>
   <property>
     <name>dt.operator.S3OutputModule.prop.accessKey</name>
-    <value>ACCESS_KEY_ID</value>
+    <value>${apex.app-param.awsCredentialsAccessKeyId}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.awsCredentialsSecretAccessKey</name>
+    <description>Specify the AWS credentials SecretAccessKey.</description>
+  </property>
   <property>
     <name>dt.operator.S3OutputModule.prop.secretAccessKey</name>
-    <value>SECRET_KEY</value>
+    <value>${apex.app-param.awsCredentialsSecretAccessKey}</value>
   </property>
 
   <property>
+    <name>apex.app-param.s3StorageBucketName</name>
+    <description>Specify the AWS S3 storage bucket name.</description>
+  </property>
+  <property>
     <name>dt.operator.S3OutputModule.prop.bucketName</name>
-    <value>BUCKET_NAME</value>
+    <value>${apex.app-param.s3StorageBucketName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.minimumReadersForDynamicPartitioning</name>
+    <value>2</value>
+    <description>Specify minimum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.minReaders</name>
+    <value>${apex.app-param.minimumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
+    <value>16</value>
+    <description>Specify maximum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.maxReaders</name>
+    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfBlocksPerWindow</name>
+    <value>1</value>
+    <description>Specify number of blocks per window.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.blocksThreshold</name>
+    <value>${apex.app-param.numberOfBlocksPerWindow}</value>
   </property>
 
 </configuration>

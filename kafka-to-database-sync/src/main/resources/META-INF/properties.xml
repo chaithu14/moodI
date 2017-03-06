@@ -23,43 +23,147 @@
 <configuration>
 
   <property>
+    <name>apex.app-param.kafkaBrokerList</name>
+    <description>Specify Kafka Broker(s) list. E.g: broker1.com:9092, broker2.com:9093, broker3.com:9094</description>
+  </property>
+  <property>
     <name>dt.operator.kafkaInput.prop.clusters</name>
-    <value>localhost:9092</value>
-  </property> 
+    <value>${apex.app-param.kafkaBrokerList}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.kafkaTopicName</name>
+    <description>Specify topic name of Kafka. E.g: transactions</description>
+  </property>
   <property>
     <name>dt.operator.kafkaInput.prop.topics</name>
-    <value>transactions</value>
+    <value>${apex.app-param.kafkaTopicName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.initialOffsetOfTopicForKafkaConsumer</name>
+    <value>LATEST</value>
+    <description>Specify initial offset from the position where Kafka consumer starts reading messages. E.g: LATEST</description>
   </property>
   <property>
     <name>dt.operator.kafkaInput.prop.initialOffset</name>
-    <value>EARLIEST</value>
+    <value>${apex.app-param.initialOffsetOfTopicForKafkaConsumer}</value>
   </property>
 
   <!-- Jdbc Output properties -->
   <property>
-    <name>dt.operator.JdbcOutput.prop.store.databaseDriver</name>
+    <name>apex.app-param.jdbcOutputDatabaseDriver</name>
     <value>org.postgresql.Driver</value>
+    <description>Specify Jdbc database driver for output database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.store.databaseDriver</name>
+    <value>${apex.app-param.jdbcOutputDatabaseDriver}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.jdbcOutputDatabaseUrl</name>
+    <description>Specify Jdbc database URL driver for output database. E.g: jdbc:postgresql://localhost:5432/testdb</description>
+  </property>
   <property>
     <name>dt.operator.JdbcOutput.prop.store.databaseUrl</name>
-    <value>jdbc:postgresql://localhost:5432/testdb</value>
+    <value>${apex.app-param.jdbcOutputDatabaseUrl}</value>
   </property>
 
+  <property>
+    <name>apex.app-param.jdbcOutputStoreUsername</name>
+    <description>Specify Jdbc store username for output database. E.g: postgres</description>
+  </property>
   <property>
     <name>dt.operator.JdbcOutput.prop.store.userName</name>
-    <value>postgres</value>
+    <value>${apex.app-param.jdbcOutputStoreUsername}</value>
   </property>
 
   <property>
+    <name>apex.app-param.jdbcOutputStorePassword</name>
+    <description>Specify Jdbc store password for output database.</description>
+  </property>
+  <property>
     <name>dt.operator.JdbcOutput.prop.store.password</name>
-    <value>postgres</value>
+    <value>${apex.app-param.jdbcOutputStorePassword}</value>
   </property>
 
   <!-- Table name -->
   <property>
+    <name>apex.app-param.jdbcOutputTableName</name>
+    <description>Specify Jdbc output table name for output database. E.g: test_event_output_table</description>
+  </property>
+  <property>
     <name>dt.operator.JdbcOutput.prop.tablename</name>
-    <value>test_event_output_table</value>
+    <value>${apex.app-param.jdbcOutputTableName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvParserSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Parser.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>${apex.app-param.csvParserSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForCsvParserOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for csv parser output.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForCsvParserOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForJdbcOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for jdbc output.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForJdbcOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform input.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform output.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
   </property>
 
 </configuration>

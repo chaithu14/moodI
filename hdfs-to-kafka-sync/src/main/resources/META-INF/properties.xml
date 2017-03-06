@@ -20,16 +20,214 @@
 
 -->
 <configuration>
+
   <property>
-    <name>dt.operator.kafkaOutput.prop.topic</name>
-    <value>test</value>
+    <name>apex.app-param.inputDirectoryOrFilePathOnHDFS</name>
+    <description>Specify input path of directory or file. E.g: hdfs://source-namenode-service:port/user/dtuser/path-to-input-directory</description>
   </property>
   <property>
     <name>dt.operator.recordReader.prop.files</name>
-    <value>hdfs://source-namenode-service:port/path-to-input-directory</value>
+    <value>${apex.app-param.inputDirectoryOrFilePathOnHDFS}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.KafkaTopicName</name>
+    <description>Specify Kafka topic name. Eg: transactions</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaOutput.prop.topic</name>
+    <value>${apex.app-param.KafkaTopicName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.kafkaProducerProperties</name>
+    <description>Specify Kafka producer properties like broker list, serializer class etc. Eg: serializer.class=kafka.serializer.DefaultEncoder,producer.type=async,metadata.broker.list=localhost:9092</description>
   </property>
   <property>
     <name>dt.operator.kafkaOutput.prop.producerProperties</name>
-    <value>serializer.class=kafka.serializer.DefaultEncoder,producer.type=async,metadata.broker.list=localhost:9092</value>
+    <value>${apex.app-param.kafkaProducerProperties}</value>
   </property>
+
+  <property>
+    <name>apex.app-param.minimumReadersForDynamicPartitioning</name>
+    <value>2</value>
+    <description>Specify minimum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.recordReader.prop.minReaders</name>
+    <value>${apex.app-param.minimumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
+    <value>16</value>
+    <description>Specify maximum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.recordReader.prop.maxReaders</name>
+    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfBlocksPerWindow</name>
+    <value>1</value>
+    <description>Specify number of blocks per window.</description>
+  </property>
+  <property>
+    <name>dt.operator.recordReader.prop.blocksThreshold</name>
+    <value>${apex.app-param.numberOfBlocksPerWindow}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.blockSizeForHdfsSplitter</name>
+    <value>1048576</value>
+    <description>Specify block size for HDFS FS splitter.</description>
+  </property>
+  <property>
+    <name>dt.operator.recordReader.prop.blockSize</name>
+    <value>${apex.app-param.blockSizeForHdfsSplitter}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfPartitionsForKafkaConsumer</name>
+    <value>com.datatorrent.common.partitioner.StatelessPartitioner:16</value>
+    <description>Specify number of partitions for kafka consumer.</description>
+  </property>
+  <property>
+    <name>dt.operator.kafkaOutput.attr.PARTITIONER</name>
+    <value>${apex.app-param.numberOfPartitionsForKafkaConsumer}</value>
+  </property>
+
+  <!--Uncomment this block to customize the application-->
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "lineDelimiter": "",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+  </property>
+  <property>
+    <name>apex.app-param.csvParserSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Parser.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>${apex.app-param.csvParserSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvFormatterSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Formatter.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>${apex.app-param.csvFormatterSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForFormatterInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for formatter input.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForFormatterInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform input.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform output.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
+
 </configuration>
