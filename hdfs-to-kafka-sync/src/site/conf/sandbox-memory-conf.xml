@@ -100,4 +100,8 @@
     <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
     <value>com.datatorrent.apps.PojoEvent</value>
   </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+  </property>
 </configuration>
