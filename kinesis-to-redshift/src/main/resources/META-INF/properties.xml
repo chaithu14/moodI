@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <property>
+    <name>apex.app-param.KinesisAccessKey</name>
+    <description>Specify Access key for accessing Kinesis</description>
+  </property>
+  <property>
+    <name>dt.operator.KinesisInput.prop.accessKey</name>
+    <value>${apex.app-param.KinesisAccessKey}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.KinesisSecretKey</name>
+    <description>Specify Secret key for accessing Kinesis</description>
+  </property>
+  <property>
+    <name>dt.operator.KinesisInput.prop.secretKey</name>
+    <value>${apex.app-param.KinesisSecretKey}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.KinesisEndpoint</name>
+    <value>kinesis.us-east-1.amazonaws.com</value>
+    <description>Specify AWS Kinesis Endpoint</description>
+  </property>
+  <property>
+    <name>dt.operator.KinesisInput.prop.endPoint</name>
+    <value>${apex.app-param.KinesisEndpoint}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.KinesisStreamName</name>
+    <description>Specify AWS Kinesis Stream name</description>
+  </property>
+  <property>
+    <name>dt.operator.KinesisInput.prop.streamName</name>
+    <value>${apex.app-param.KinesisStreamName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jdbcOutputDatabaseDriver</name>
+    <description>Specify Jdbc database driver for output database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.store.databaseDriver</name>
+    <value>${apex.app-param.jdbcOutputDatabaseDriver}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jdbcOutputStoreUsername</name>
+    <description>Specify Jdbc store username for output database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.store.userName</name>
+    <value>${apex.app-param.jdbcOutputStoreUsername}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jdbcOutputStorePassword</name>
+    <description>Specify Jdbc store password for output database.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.store.password</name>
+    <value>${apex.app-param.jdbcOutputStorePassword}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.jdbcOutputDatabaseUrl</name>
+    <description>Specify Jdbc database URL driver for output database. E.g: jdbc:redshift://examplecluster.com:5439/dev</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.store.databaseUrl</name>
+    <value>${apex.app-param.jdbcOutputDatabaseUrl}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftAccessKey</name>
+    <description>Specify Access Key for accessing S3 or EMR cluster</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.accessKey</name>
+    <value>${apex.app-param.RedshiftAccessKey}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftSecretKey</name>
+    <description>Specify Secret Key for accessing S3 or EMR cluster</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.secretKey</name>
+    <value>${apex.app-param.RedShiftSecretKey}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.S3BucketName</name>
+    <value>S3_BUCKET_NAME</value>
+    <description>Specify AWS S3 Bucket Name</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.bucketName</name>
+    <value>${apex.app-param.S3BucketName}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.S3DirectoryName</name>
+    <value>S3_DIRECTORY_NAME</value>
+    <description>Specify AWS S3 directory name</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.directoryName</name>
+    <value>${apex.app-param.S3DirectoryName}</value>
+  </property>
+
+  <!-- # rows that the operator can retrieve in a window -->
+  <property>
+    <name>apex.app-param.batchSizeForJdbcOutput</name>
+    <value>500</value>
+    <description>Specify the batch size for Jdbc Output.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.batchSize</name>
+    <value>${apex.app-param.batchSizeForJdbcOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.maxLengthOfRollingFile</name>
+    <value>101200</value>
+    <description>Specify the maximum length of rolling file in bytes. For eg: 134217728 (1MB)</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.maxLengthOfRollingFile</name>
+    <value>${apex.app-param.maxLengthOfRollingFile}</value>
+  </property>
+
+  <!-- Output Table name -->
+  <property>
+    <name>apex.app-param.jdbcOutputTableName</name>
+    <description>Specify Jdbc output table name for output database. E.g: test_event_output_table</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.tableName</name>
+    <value>${apex.app-param.jdbcOutputTableName}</value>
+  </property>
+
+  <!-- POJO class -->
+  <property>
+    <name>apex.app-param.tupleClassNameForJdbcOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for jdbc output.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForJdbcOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.EmrClusterId</name>
+    <value>EMR-CLUSTERID</value>
+    <description>Specify EMR cluster Id.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.emrClusterId</name>
+    <value>${apex.app-param.EmrClusterId}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RegionOfInputFile</name>
+    <description>Specify AWS region from where the input file resides.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.region</name>
+    <value>${apex.app-param.RegionOfInputFile}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftDelimiter</name>
+    <value></value>
+    <description>Specify delimiter for Redshift.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.</name>
+    <value>${apex.app-param.RedshiftDelimiter}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftDelimiter</name>
+    <value>|</value>
+    <description>Specify delimiter for Redshift.</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.redshiftDelimiter</name>
+    <value>${apex.app-param.RedshiftDelimiter}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftReaderMode</name>
+    <value>READ_FROM_S3</value>
+    <description>Specify reader mode for Redshift. By default, it load files from S3 into Redshift table. If the file is located in EMR, then specify "READ_FROM_EMR" mode</description>
+  </property>
+  <property>
+    <name>dt.operator.JdbcOutput.prop.readerMode</name>
+    <value>${apex.app-param.RedshiftReaderMode}</value>
+  </property>
+
+</configuration>
