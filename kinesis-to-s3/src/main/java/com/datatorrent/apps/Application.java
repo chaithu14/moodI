@@ -19,13 +19,20 @@
 
 package com.datatorrent.apps;
 
+import java.util.Map;
+
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
+import com.datatorrent.contrib.formatter.CsvFormatter;
 import com.datatorrent.contrib.kinesis.KinesisByteArrayInputOperator;
+import com.datatorrent.contrib.parser.CsvParser;
+import com.datatorrent.lib.transform.TransformOperator;
 
 import org.apache.apex.malhar.lib.fs.s3.S3TupleOutputModule;
 import org.apache.hadoop.conf.Configuration;
+
+import com.google.common.collect.Maps;
 
 @ApplicationAnnotation(name="kinesis-to-S3")
 public class Application implements StreamingApplication
@@ -36,7 +43,6 @@ public class Application implements StreamingApplication
     // Add Kinesis as input and S3 as output operators respectively to dag.
     KinesisByteArrayInputOperator inputModule = dag.addOperator("KinesisInput", new KinesisByteArrayInputOperator());
     S3TupleOutputModule.S3BytesOutputModule outputModule = dag.addModule("S3OutputModule", new S3TupleOutputModule.S3BytesOutputModule());
-
     // Create a stream for messages from Kinesis to S3
     dag.addStream("KinesisToS3", inputModule.outputPort, outputModule.input);
 
@@ -73,7 +79,7 @@ public class Application implements StreamingApplication
      * dag.addStream("data", inputModule.outputPort, csvParser.in);
      * dag.addStream("pojo", csvParser.out, transform.input);
      * dag.addStream("transformed", transform.output, formatter.in);
-     * dag.addStream("string", formatter.out, fileOutput.input);
+     * dag.addStream("string", formatter.out, outputModule.input);
      *
      */
   }

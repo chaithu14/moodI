@@ -111,5 +111,102 @@
     <name>dt.operator.S3OutputModule.prop.minS3UploadPartitions</name>
     <value>${apex.app-param.minNoOfS3UploadPartitions}</value>
   </property>
+
+  <property>
+    <name>apex.app-param.csvParserSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Parser.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>${apex.app-param.csvParserSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvFormatterSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Formatter.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>${apex.app-param.csvFormatterSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForCsvParserOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for csv parser output.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForCsvParserOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForFormatterInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for formatter input.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForFormatterInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform input.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform output.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
+
 </configuration>
 
