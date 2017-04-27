@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<configuration>
+  <property>
+    <name>apex.app-param.filesForScanning</name>
+    <description>Specify the comma separated files/directories to scan</description>
+  </property>
+  <property>
+    <name>dt.operator.S3Input.prop.filesForScanning</name>
+    <value>${apex.app-param.filesForScanning}</value>
+  </property>
+  <property>
+    <name>apex.app-param.bucketNameForS3Input</name>
+    <description>Specify name of the bucket for input S3</description>
+  </property>
+  <property>
+    <name>dt.operator.S3Input.prop.bucketName</name>
+    <value>${apex.app-param.bucketNameForS3Input}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.accessKeyForS3Input</name>
+    <description>Specify accessKey for input S3</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.accessKey</name>
+    <value>${apex.app-param.accessKeyForS3Input}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.secretKeyForS3Input</name>
+    <description>Specify secretKey for input S3</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.secretKey</name>
+    <value>${apex.app-param.secretKeyForS3Input}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.regionForS3OrEMR</name>
+    <description>Specify region for input S3</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.region</name>
+    <value>${apex.app-param.regionForS3OrEMR}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.directoryPathForRedshiftInS3</name>
+    <value>user/appuser/output</value>
+    <description>Specify directory name for intermediate S3 which writes the redshift module only if the reader mode is READ_FROM_S3</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.directoryName</name>
+    <value>${apex.app-param.directoryPathForRedshiftInS3}</value>
+  </property>
+  <property>
+    <name>apex.app-param.bucketNameForRedshiftInS3</name>
+    <description>Specify name of the bucket for intermediate S3 which writes the redshift module only if the reader mode is READ_FROM_S3</description>
+    <value>dummyBucket</value>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.bucketName</name>
+    <value>${apex.app-param.bucketNameForRedshiftInS3}</value>
+  </property>
+  <property>
+    <name>apex.app-param.clusterIdForRedshift</name>
+    <description>Specify the cluster id for redshift only if the reader mode is READ_FROM_EMR</description>
+    <value>emrcluster</value>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.emrClusterId</name>
+    <value>${apex.app-param.clusterIdForRedshift}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tableNameForRedshift</name>
+    <description>Specify the name of the table for redshift database.</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.tableName</name>
+    <value>${apex.app-param.tableNameForRedshift}</value>
+  </property>
+  <property>
+    <name>apex.app-param.userNameToConnectRedshift</name>
+    <description>Specify the user name to connect redshift database.</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.store.userName</name>
+    <value>${apex.app-param.userNameToConnectRedshift}</value>
+  </property>
+  <property>
+    <name>apex.app-param.userPasswordToConnectRedshift</name>
+    <description>Specify the password to connect redshift database</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.store.password</name>
+    <value>${apex.app-param.userPasswordToConnectRedshift}</value>
+  </property>
+  <property>
+    <name>apex.app-param.jdbcUrlOfRedshift</name>
+    <description>Specify the jdbc url of the cluster.</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.store.databaseUrl</name>
+    <value>${apex.app-param.jdbcUrlOfRedshift}</value>
+  </property>
+  <property>
+    <name>apex.app-param.jdbcDriverOfRedshift</name>
+    <description>Specify the jdbc driver of the Redshift cluster.</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.store.databaseDriver</name>
+    <value>${apex.app-param.jdbcDriverOfRedshift}</value>
+  </property>
+  <property>
+    <name>apex.app-param.RedshiftDelimiter</name>
+    <value>|</value>
+    <description>Specify delimiter for Redshift.</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.redshiftDelimiter</name>
+    <value>${apex.app-param.RedshiftDelimiter}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.RedshiftReaderMode</name>
+    <value>READ_FROM_S3</value>
+    <description>Specify reader mode for Redshift. By default, it load files from S3 into Redshift table. If the file is located in EMR, then specify "READ_FROM_EMR" mode</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.readerMode</name>
+    <value>${apex.app-param.RedshiftReaderMode}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvParserSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Parser.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.prop.schema</name>
+    <value>${apex.app-param.csvParserSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.csvFormatterSchema</name>
+    <value>{
+      "separator": "|",
+      "quoteChar": "\"",
+      "fields": [
+      {
+      "name": "accountNumber",
+      "type": "Integer"
+      },
+      {
+      "name": "name",
+      "type": "String"
+      },
+      {
+      "name": "amount",
+      "type": "Integer"
+      }
+      ]
+      }
+    </value>
+    <description>Specify schema for CSV Formatter.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.prop.schema</name>
+    <value>${apex.app-param.csvFormatterSchema}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForCsvParserOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for csv parser output.</description>
+  </property>
+  <property>
+    <name>dt.operator.csvParser.port.out.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForCsvParserOutput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForFormatterInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for formatter input.</description>
+  </property>
+  <property>
+    <name>dt.operator.formatter.port.in.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForFormatterInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformInput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform input.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.input.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformInput}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.tupleClassNameForTransformOutput</name>
+    <value>com.datatorrent.apps.PojoEvent</value>
+    <description>Specify tuple class name for transform output.</description>
+  </property>
+  <property>
+    <name>dt.operator.transform.port.output.attr.TUPLE_CLASS</name>
+    <value>${apex.app-param.tupleClassNameForTransformOutput}</value>
+  </property>
+
+</configuration>
+
