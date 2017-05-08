@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<configuration>
+  <property>
+    <name>apex.app-param.inputDirectoryOrFilePath</name>
+    <description>Specify input path of directory or file. E.g: hdfs://source-namenode-service/user/dtuser/path-to-input-directory</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.files</name>
+    <value>${apex.app-param.inputDirectoryOrFilePath}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.outputDirectoryPath</name>
+    <description>Specify output directory path on HDFS. E.g: hdfs://destination-namenode-service/user/dtuser/path-to-output-directory</description>
+  </property>
+  <property>
+    <name>dt.operator.PartFileCopy.prop.outputDirectoryPath</name>
+    <value>${apex.app-param.outputDirectoryPath}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
+    <value>1</value>
+    <description>Specify maximum readers for dynamic partitioning.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.maxReaders</name>
+    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.numberOfBlocksPerWindow</name>
+    <value>1</value>
+    <description>Specify number of blocks per window.</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.blocksThreshold</name>
+    <value>${apex.app-param.numberOfBlocksPerWindow}</value>
+  </property>
+
+  <property>
+    <name>apex.app-param.blockSizeInBytes</name>
+    <value>134217728</value>
+    <description>Specify the block size in bytes. By default, the value is 128 MB</description>
+  </property>
+  <property>
+    <name>dt.operator.HDFSInputModule.prop.blockSize</name>
+    <value>${apex.app-param.blockSizeInBytes}</value>
+  </property>
+
+</configuration>
+
