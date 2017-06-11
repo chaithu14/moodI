@@ -6,27 +6,20 @@
     <version>0.1.0-SNAPSHOT</version>
   </parent>
   <groupId>com.datatorrent</groupId>
-  <artifactId>moodi-operators</artifactId>
+  <artifactId>moodi-operator-contrib</artifactId>
   <packaging>pom</packaging>
-  <name>moodi-operators</name>
-  
+  <name>moodi-operator-contirb</name>
+
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.deploy.skip>false</maven.deploy.skip>
-    <apex.core.version>3.5.0</apex.core.version>
-    <surefire.args>-Xmx2048m</surefire.args>
+    <malhar.version>3.8.0-SNAPSHOT</malhar.version>
   </properties>
 
   <dependencies>
-   <!-- Add dependencies here -->
+    <!-- Add dependencies here -->
   </dependencies>
-  
+
   <modules>
-    <!-- add other operator modules here -->
-    <module>library</module>
-    <module>contrib</module>
+    <module>aws-connectors</module>
   </modules>
-  
-  
 </project>
