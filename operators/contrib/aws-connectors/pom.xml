@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>moodi-operators</artifactId>
+    <artifactId>moodi-operator-contrib</artifactId>
     <groupId>com.datatorrent</groupId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>moodi-operator-library</artifactId>
-  <name>moodi-operator-library</name>
+  <artifactId>moodi-aws-connectors</artifactId>
+  <name>moodi-aws-connectors</name>
   <packaging>jar</packaging>
-  
+
    <build>
     <plugins>
       <!-- Publish tests jar -->
@@ -159,39 +159,10 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>schema-api</artifactId>
-      <version>3.9.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.datatorrent</groupId>
-      <artifactId>schema-propagation</artifactId>
-      <version>3.9.0-SNAPSHOT</version>
-      <scope>test</scope>
-   </dependency>
-   <dependency>
-      <groupId>net.sf.supercsv</groupId>
-      <artifactId>super-csv</artifactId>
-      <version>2.4.0</version>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-kinesis</artifactId>
+      <version>1.9.10</version>
       <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>com.github.fge</groupId>
-      <artifactId>json-schema-validator</artifactId>
-      <version>2.0.1</version>
-      <optional>true</optional>
-   </dependency>
-    <dependency>
-      <groupId>org.jooq</groupId>
-      <artifactId>jooq</artifactId>
-      <version>3.6.4</version>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.1</version>
-      <type>jar</type>
     </dependency>
   </dependencies>
 
