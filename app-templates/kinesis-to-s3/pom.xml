@@ -13,7 +13,7 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
-    <apex.version>3.4.0</apex.version>
+    <apex.version>3.7.0-SNAPSHOT</apex.version>
     <malhar.version>3.8.0-SNAPSHOT</malhar.version>
     <aws.version>1.9.10</aws.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
@@ -333,6 +333,21 @@
       <artifactId>apex-engine</artifactId>
       <version>${apex.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-contrib-library</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>moodi-operator-library</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.datatorrent</groupId>
+      <artifactId>metrics-plugin</artifactId>
+      <version>3.9.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
