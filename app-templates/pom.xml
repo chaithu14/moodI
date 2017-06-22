@@ -156,5 +156,6 @@
     <module>kafka-to-hdfs-filter-transform</module>
     <module>kafka-to-kafka-filter-transform</module>
     <module>kafka-to-cassandra-filter-transform</module>
+    <module>kinesis-to-s3</module>
   </modules>
 </project>

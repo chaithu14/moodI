@@ -17,11 +17,11 @@ public class S3Reconciler extends org.apache.apex.malhar.lib.fs.s3.S3Reconciler
   @AutoMetric
   private long bytesWrittenPerSecond;
   @AutoMetric
-  private long bytesWritten = 0;
+  private long totalBytesWritten = 0;
   @AutoMetric
   private long eventsWrittenPerSecond;
   @AutoMetric
-  private long eventsWritten = 0;
+  private long totalEventsWritten = 0;
   private long eventsWrittenPerWindow;
   private long bytesWrittenPerWindow;
   private double windowTimeSec;
@@ -68,7 +68,7 @@ public class S3Reconciler extends org.apache.apex.malhar.lib.fs.s3.S3Reconciler
     super.endWindow();
     bytesWrittenPerSecond = (long)(bytesWrittenPerWindow/windowTimeSec);
     eventsWrittenPerSecond = (long)(eventsWrittenPerWindow/windowTimeSec);
-    bytesWritten += bytesWrittenPerWindow;
-    eventsWritten += eventsWrittenPerWindow;
+    totalBytesWritten += bytesWrittenPerWindow;
+    totalEventsWritten += eventsWrittenPerWindow;
   }
 }

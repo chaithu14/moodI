@@ -16,9 +16,9 @@ public class KinesisByteArrayInputOperator extends com.datatorrent.contrib.kines
   @AutoMetric
   private long bytesReadPerSecond;
   @AutoMetric
-  private long bytesRead = 0;
+  private long totalBytesRead = 0;
   @AutoMetric
-  private long eventsRead = 0;
+  private long totalEventsRead = 0;
   @AutoMetric
   private long eventsReadPerSecond;
   private long eventsReadPerWindow;
@@ -57,7 +57,7 @@ public class KinesisByteArrayInputOperator extends com.datatorrent.contrib.kines
     super.endWindow();
     bytesReadPerSecond = (long)(bytesReadPerWindow/windowTimeSec);
     eventsReadPerSecond = (long)(eventsReadPerWindow/windowTimeSec);
-    bytesRead += bytesReadPerWindow;
-    eventsRead += eventsReadPerWindow;
+    totalBytesRead += bytesReadPerWindow;
+    totalEventsRead += eventsReadPerWindow;
   }
 }
