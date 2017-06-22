@@ -55,9 +55,9 @@ public class S3Reconciler extends org.apache.apex.malhar.lib.fs.s3.S3Reconciler
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    bytesWritten += metaData.getSize();
+    bytesWrittenPerWindow += metaData.getSize();
     if (metaData instanceof com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData) {
-      eventsWritten += ((com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData)metaData).getNoOfTuplesWritten();
+      eventsWrittenPerWindow += ((com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData)metaData).getNoOfTuplesWritten();
     }
     super.removeIntermediateFiles(metaData);
   }
