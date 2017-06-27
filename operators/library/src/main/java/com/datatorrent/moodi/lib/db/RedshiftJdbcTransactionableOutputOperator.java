@@ -1,4 +1,4 @@
-package com.datatorrent.lib.metrics;
+package com.datatorrent.moodi.lib.db;
 
 import org.apache.apex.malhar.lib.fs.FSRecordCompactionOperator;
 
@@ -23,8 +23,8 @@ public class RedshiftJdbcTransactionableOutputOperator extends org.apache.apex.m
   protected String generateCopyStatement(FSRecordCompactionOperator.OutputMetaData data)
   {
     bytesWrittenPerWindow += data.getSize();
-    if (data instanceof com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData) {
-      eventsWrittenPerWindow += ((com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData)data).getNoOfTuplesWritten();
+    if (data instanceof com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator.OutputMetaData) {
+      eventsWrittenPerWindow += ((com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator.OutputMetaData)data).getNoOfTuplesWritten();
     }
     return super.generateCopyStatement(data);
   }

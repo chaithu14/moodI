@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "S3 To Redshift App",
+      "file": "S3-to-redshift.dtdashboard",
+      "appNames": ["S3-to-redshift"]
+    }
+  ]
+}

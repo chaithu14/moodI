@@ -1,4 +1,4 @@
-package com.datatorrent.lib.metrics;
+package com.datatorrent.moodi.lib.db;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -12,8 +12,10 @@ import com.google.common.base.Preconditions;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.Module;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
+import com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator;
+import com.datatorrent.moodi.lib.io.fs.s3.S3MetricsTupleOutputModule;
 
-import static com.datatorrent.lib.metrics.RedshiftOutputModule.READER_MODE.READ_FROM_S3;
+import static com.datatorrent.moodi.lib.db.RedshiftOutputModule.READER_MODE.READ_FROM_S3;
 
 /**
  * Functionality of RedshiftOutputModule is load data into Redshift table. Data intermediately writes to HDFS/S3 and

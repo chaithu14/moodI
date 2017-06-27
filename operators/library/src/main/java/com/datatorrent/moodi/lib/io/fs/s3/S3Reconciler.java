@@ -1,4 +1,4 @@
-package com.datatorrent.lib.metrics;
+package com.datatorrent.moodi.lib.io.fs.s3;
 
 import java.io.IOException;
 
@@ -56,8 +56,8 @@ public class S3Reconciler extends org.apache.apex.malhar.lib.fs.s3.S3Reconciler
       throw new RuntimeException(e);
     }
     bytesWrittenPerWindow += metaData.getSize();
-    if (metaData instanceof com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData) {
-      eventsWrittenPerWindow += ((com.datatorrent.lib.metrics.FSRecordCompactionOperator.OutputMetaData)metaData).getNoOfTuplesWritten();
+    if (metaData instanceof com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator.OutputMetaData) {
+      eventsWrittenPerWindow += ((com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator.OutputMetaData)metaData).getNoOfTuplesWritten();
     }
     super.removeIntermediateFiles(metaData);
   }
