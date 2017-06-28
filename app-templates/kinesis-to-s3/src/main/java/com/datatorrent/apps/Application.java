@@ -19,21 +19,14 @@
 
 package com.datatorrent.apps;
 
-import java.util.Map;
-
 import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
-import com.datatorrent.contrib.formatter.CsvFormatter;
-import com.datatorrent.contrib.parser.CsvParser;
-import com.datatorrent.lib.metrics.S3MetricsTupleOutputModule;
-import com.datatorrent.lib.transform.TransformOperator;
-import com.datatorrent.metrics.KinesisByteArrayInputOperator;
+import com.datatorrent.moodi.kinesis.KinesisByteArrayInputOperator;
+import com.datatorrent.moodi.lib.io.fs.s3.S3MetricsTupleOutputModule;
 
 import org.apache.hadoop.conf.Configuration;
-
-import com.google.common.collect.Maps;
 
 @ApplicationAnnotation(name="kinesis-to-S3")
 public class Application implements StreamingApplication

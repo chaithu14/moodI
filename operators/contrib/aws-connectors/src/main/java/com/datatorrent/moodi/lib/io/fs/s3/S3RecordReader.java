@@ -1,4 +1,4 @@
-package com.datatorrent.lib.metrics;
+package com.datatorrent.moodi.lib.io.fs.s3;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -18,6 +18,7 @@ import com.google.common.io.ByteStreams;
 
 import com.datatorrent.lib.io.block.BlockMetadata;
 import com.datatorrent.lib.io.block.ReaderContext;
+import com.datatorrent.moodi.lib.io.fs.FSRecordReader;
 
 /**
  * This operator can be used for reading records/tuples from S3 in parallel

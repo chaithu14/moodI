@@ -1,4 +1,4 @@
-package com.datatorrent.lib.metrics;
+package com.datatorrent.moodi.lib.io.fs.s3;
 
 import java.util.Arrays;
 
@@ -18,6 +18,7 @@ import com.datatorrent.api.Module;
 import com.datatorrent.api.StatsListener;
 import com.datatorrent.lib.converter.Converter;
 import com.datatorrent.lib.partitioner.StatelessThroughputBasedPartitioner;
+import com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator;
 
 /**
  * S3MetricsTupleOutputModule writes incoming tuples into files and uploads these files on Amazon S3.

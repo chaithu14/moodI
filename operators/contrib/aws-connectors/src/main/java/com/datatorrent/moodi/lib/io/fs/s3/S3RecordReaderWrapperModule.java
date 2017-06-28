@@ -1,4 +1,4 @@
-package com.datatorrent.fs.s3;
+package com.datatorrent.moodi.lib.io.fs.s3;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -11,7 +11,7 @@ import com.google.common.base.Preconditions;
 
 import com.datatorrent.api.DAG;
 import com.datatorrent.lib.io.fs.S3BlockReader;
-import com.datatorrent.lib.metrics.S3RecordReader;
+import com.datatorrent.moodi.lib.io.fs.s3.S3RecordReader;
 
 /**
  * Wrapper for S3RecordReaderModule and specify the below parameters as configuration to this module:

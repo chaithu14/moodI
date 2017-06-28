@@ -27,9 +27,9 @@ import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.formatter.CsvFormatter;
 import com.datatorrent.contrib.parser.CsvParser;
-import com.datatorrent.fs.s3.S3RecordReaderWrapperModule;
+import com.datatorrent.moodi.lib.io.fs.s3.S3RecordReaderWrapperModule;
 import com.datatorrent.lib.converter.StringToByteArrayConverterOperator;
-import com.datatorrent.lib.metrics.RedshiftOutputModule;
+import com.datatorrent.moodi.lib.db.RedshiftOutputModule;
 import com.datatorrent.lib.transform.TransformOperator;
 import org.apache.hadoop.conf.Configuration;
 

@@ -1,4 +1,4 @@
-package com.datatorrent.metrics;
+package com.datatorrent.moodi.kinesis;
 
 import com.amazonaws.services.kinesis.model.Record;
 
