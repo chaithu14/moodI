@@ -20,7 +20,6 @@
     <!-- change this if you desire to use a different version of Apex Core -->
     <apex.version>3.7.0-SNAPSHOT</apex.version>
     <malhar.version>3.8.0-SNAPSHOT</malhar.version>
-    <aws.version>1.9.10</aws.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, kinesis, s3</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
@@ -301,20 +300,10 @@
       -->
     </dependency>
     <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-kinesis</artifactId>
-      <version>${aws.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.apache.apex</groupId>
       <artifactId>apex-common</artifactId>
       <version>${apex.version}</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>${aws.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

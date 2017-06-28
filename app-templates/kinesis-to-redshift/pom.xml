@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
 
   <!-- change these to the appropriate values -->
-  <name>Kinesis-to-Redshift</name>
+  <name>Kinesis to Redshift App</name>
   <description>Ingest records from AWS kinesis streams and writes them to AWS Redshift database.</description>
 
   <properties>
@@ -292,11 +292,6 @@
       <groupId>com.datatorrent</groupId>
       <artifactId>moodi-aws-connectors</artifactId>
       <version>0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-kinesis</artifactId>
-      <version>1.9.10</version>
     </dependency>
     <dependency>
       <groupId>com.datatorrent</groupId>

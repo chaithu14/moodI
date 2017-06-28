@@ -63,9 +63,9 @@ public class Application implements StreamingApplication
      *
      * Use S3TupleOutputModule.S3StringOutputModule instead of S3TupleOutputModule.S3BytesOutputModule i.e.
      * Replace the following line below:
-     * S3TupleOutputModule.S3BytesOutputModule outputModule = dag.addModule("S3OutputModule", new S3TupleOutputModule.S3BytesOutputModule());
+     * S3MetricsTupleOutputModule.S3BytesOutputModule outputModule = dag.addModule("S3OutputModule", new S3MetricsTupleOutputModule.S3BytesOutputModule());
      * with this lines:
-     * S3TupleOutputModule.S3StringOutputModule outputModule = dag.addModule("S3OutputModule", new S3TupleOutputModule.S3StringOutputModule());
+     * S3MetricsTupleOutputModule.S3StringOutputModule outputModule = dag.addModule("S3OutputModule", new S3MetricsTupleOutputModule.S3StringOutputModule());
      *
      * Connect these operators with appropriate streams
      * Replace the following line below:
