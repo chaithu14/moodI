@@ -88,7 +88,7 @@
   </property>
   <property>
     <name>dt.operator.JdbcOutput.prop.secretKey</name>
-    <value>${apex.app-param.RedShiftSecretKey}</value>
+    <value>${apex.app-param.RedshiftSecretKey}</value>
   </property>
 
   <property>
@@ -170,16 +170,6 @@
   <property>
     <name>dt.operator.JdbcOutput.prop.region</name>
     <value>${apex.app-param.RegionOfInputFile}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.RedshiftDelimiter</name>
-    <value></value>
-    <description>Specify delimiter for Redshift.</description>
-  </property>
-  <property>
-    <name>dt.operator.JdbcOutput.prop.</name>
-    <value>${apex.app-param.RedshiftDelimiter}</value>
   </property>
 
   <property>

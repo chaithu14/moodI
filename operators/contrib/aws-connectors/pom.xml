@@ -5,9 +5,14 @@
     <groupId>com.datatorrent</groupId>
     <version>0.1.0-SNAPSHOT</version>
   </parent>
+
   <artifactId>moodi-aws-connectors</artifactId>
   <name>moodi-aws-connectors</name>
   <packaging>jar</packaging>
+
+  <properties>
+  <aws.version>1.10.73</aws.version>
+  </properties>
 
    <build>
     <plugins>
@@ -161,14 +166,12 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-kinesis</artifactId>
-      <version>1.9.10</version>
-      <optional>true</optional>
+      <version>${aws.version}</version>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.10.73</version>
-      <optional>true</optional>
+      <version>${aws.version}</version>
     </dependency>
     <dependency>
       <groupId>com.datatorrent</groupId>
