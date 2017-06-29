@@ -1,0 +1,9 @@
+{
+  "dashboards": [
+    {
+      "name": "HDFS Line Copy App",
+      "file": "HDFS-line-copy.dtdashboard",
+      "appNames": ["HDFS-line-copy"]
+    }
+  ]
+}

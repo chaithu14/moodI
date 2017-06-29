@@ -178,11 +178,12 @@
   <modules>
     <!-- Add individual app templates as modules here -->
     <module>hdfs-to-hdfs-filter-transform</module>
+    <module>hdfs-line-copy</module>
     <module>kafka-to-hdfs-filter-transform</module>
     <module>kafka-to-kafka-filter-transform</module>
     <module>kafka-to-cassandra-filter-transform</module>
     <module>kinesis-to-s3</module>
-    <module>s3-to-redshift</module>
     <module>kinesis-to-redshift</module>
+    <module>s3-to-redshift</module>
   </modules>
 </project>

@@ -23,19 +23,20 @@ package com.datatorrent.apps;
 import java.io.File;
 import java.util.Map;
 
-import org.apache.apex.malhar.lib.fs.FSRecordReaderModule;
-import org.apache.apex.malhar.lib.fs.GenericFileOutputOperator.StringFileOutputOperator;
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.collect.Maps;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.StreamingApplication;
 import com.datatorrent.api.annotation.ApplicationAnnotation;
 import com.datatorrent.contrib.formatter.CsvFormatter;
 import com.datatorrent.contrib.parser.CsvParser;
 import com.datatorrent.lib.transform.TransformOperator;
+import com.datatorrent.moodi.io.fs.StringFileOutputOperator;
+import com.datatorrent.moodi.lib.io.fs.FSRecordReaderModule;
 
 @ApplicationAnnotation(name="HDFS-line-copy")
 public class Application implements StreamingApplication
@@ -52,6 +53,8 @@ public class Application implements StreamingApplication
     dag.addStream("record", recordReader.records, csvParser.in);
     dag.addStream("pojo", csvParser.out, formatter.in);
     dag.addStream("string", formatter.out, fileOutput.input);
+
+    dag.setAttribute(Context.DAGContext.METRICS_TRANSPORT, null);
     
     /*
      * To add custom logic to your DAG, add your custom operator here with
