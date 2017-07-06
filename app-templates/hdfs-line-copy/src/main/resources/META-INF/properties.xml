@@ -132,6 +132,7 @@
     <value>{
       "separator": "|",
       "quoteChar": "\"",
+      "lineDelimiter":"",
       "fields": [
       {
       "name": "accountNumber",
