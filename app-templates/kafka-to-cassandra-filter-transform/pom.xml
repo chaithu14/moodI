@@ -27,12 +27,6 @@
       <groupId>org.apache.apex</groupId>
       <artifactId>malhar-kafka</artifactId>
       <version>${malhar.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.github.fge</groupId>
