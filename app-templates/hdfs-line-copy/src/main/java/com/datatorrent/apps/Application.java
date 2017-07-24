@@ -49,7 +49,11 @@ public class Application implements StreamingApplication
     CsvParser csvParser = dag.addOperator("csvParser", CsvParser.class);
     CsvFormatter formatter = dag.addOperator("formatter", new CsvFormatter());
     StringFileOutputOperator fileOutput = dag.addOperator("fileOutput", new StringFileOutputOperator());
-    
+
+    // Partition Parallel
+    dag.setInputPortAttribute(csvParser.in, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(formatter.in, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(fileOutput.input, Context.PortContext.PARTITION_PARALLEL, true);
     dag.addStream("record", recordReader.records, csvParser.in);
     dag.addStream("pojo", csvParser.out, formatter.in);
     dag.addStream("string", formatter.out, fileOutput.input);
@@ -77,9 +81,10 @@ public class Application implements StreamingApplication
      * Replace the following line:
      * dag.addStream("pojo", csvParser.out, formatter.in);
      * 
-     * with the following two lines:
+     * with the following lines:
      * dag.addStream("pojo", csvParser.out, transform.input);
      * dag.addStream("transformed", transform.output, formatter.in);
+     * dag.setInputPortAttribute(transform.input, Context.PortContext.PARTITION_PARALLEL, true);
      * 
      * In ApplicationTest.java
      * Replace the following line:
