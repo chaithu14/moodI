@@ -240,8 +240,8 @@ public class S3RecordReader extends FSRecordReader
     @Override
     public void initialize(FSDataInputStream stream, BlockMetadata blockMetadata, boolean consecutiveBlock)
     {
-      super.initialize(stream, blockMetadata, consecutiveBlock);
       s3Params.initialzeFilepathAndFileLength(blockMetadata);
+      super.initialize(stream, blockMetadata, consecutiveBlock);
       /*
        * Initialize the bufferSize and overflowBufferSize
        */
@@ -334,8 +334,8 @@ public class S3RecordReader extends FSRecordReader
     @Override
     public void initialize(FSDataInputStream stream, BlockMetadata blockMetadata, boolean consecutiveBlock)
     {
-      super.initialize(stream, blockMetadata, consecutiveBlock);
       s3Params.initialzeFilepathAndFileLength(blockMetadata);
+      super.initialize(stream, blockMetadata, consecutiveBlock);
       try {
         int bytesRead = this.getBlockFromS3();
         if (bytesRead == -1) {

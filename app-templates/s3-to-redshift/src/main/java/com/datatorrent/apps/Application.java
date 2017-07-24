@@ -53,6 +53,12 @@ public class Application implements StreamingApplication
     StringToByteArrayConverterOperator converterOp = dag.addOperator("converter", new StringToByteArrayConverterOperator());
     RedshiftOutputModule redshiftOutput = dag.addModule("RedshiftOutput", new RedshiftOutputModule());
 
+    // Partition Parallel
+    dag.setInputPortAttribute(csvParser.in, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(transform.input, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(formatter.in, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(converterOp.input, Context.PortContext.PARTITION_PARALLEL, true);
+    dag.setInputPortAttribute(redshiftOutput.input, Context.PortContext.PARTITION_PARALLEL, true);
     //Create streams
     dag.addStream("data", inputModule.records, csvParser.in);
     dag.addStream("pojo", csvParser.out, transform.input);
