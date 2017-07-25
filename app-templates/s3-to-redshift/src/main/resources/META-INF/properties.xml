@@ -185,6 +185,15 @@
     <name>dt.operator.RedshiftOutput.prop.redshiftDelimiter</name>
     <value>${apex.app-param.RedshiftDelimiter}</value>
   </property>
+  <property>
+    <name>apex.app-param.maxLengthOfRollingFile</name>
+    <value>1048576</value>
+    <description>Specify the maximum length of S3/HDFS rolling file. By default,the size is 1 MB</description>
+  </property>
+  <property>
+    <name>dt.operator.RedshiftOutput.prop.maxLengthOfRollingFile</name>
+    <value>${apex.app-param.maxLengthOfRollingFile}</value>
+  </property>
 
   <property>
     <name>apex.app-param.RedshiftReaderMode</name>

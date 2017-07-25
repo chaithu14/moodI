@@ -12,6 +12,7 @@ import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.base.Preconditions;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.Module;
@@ -80,35 +81,14 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
   @Min(1)
   protected Long maxLength = 128 * 1024 * 1024L;
 
-  /**
-   * Maximum number of tuples per sec per partition for HDFS write.
-   */
-  private long maxTuplesPerSecPerPartition = 300000;
 
   /**
    * Minimum number of tuples per sec per partition for HDFS write.
    */
   private long minTuplesPerSecPerPartition = 30000;
 
-  /**
-   * Time interval in milliseconds to check for repartitioning
-   */
-  private long coolDownMillis = 1 * 60 * 1000;
 
-  /**
-   * Maximum number of S3 upload partitions
-   */
-  private int maxS3UploadPartitions = 16;
-
-  /**
-   * Minimum number of S3 upload partitions
-   */
-  private int minS3UploadPartitions = 1;
-
-  /**
-   * Maximum queue size for S3 upload
-   */
-  private int maxQueueSizeS3Upload = 4;
+  private boolean isCompactionParallelPartition = false;
 
   public void populateDAG(DAG dag, Configuration conf)
   {
@@ -117,13 +97,7 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
     s3compaction.setMaxIdleWindows(maxIdleWindows);
     s3compaction.setMaxLength(maxLength);
 
-    StatelessThroughputBasedPartitioner<FSRecordCompactionOperator<INPUT>> partitioner = new StatelessThroughputBasedPartitioner<FSRecordCompactionOperator<INPUT>>();
-    partitioner.setMaximumEvents(maxTuplesPerSecPerPartition);
-    partitioner.setMinimumEvents(minTuplesPerSecPerPartition);
-    partitioner.setCooldownMillis(coolDownMillis);
-    dag.setAttribute(s3compaction, OperatorContext.STATS_LISTENERS, Arrays.asList(new StatsListener[] {partitioner}));
-    dag.setAttribute(s3compaction, OperatorContext.PARTITIONER, partitioner);
-
+    dag.setInputPortAttribute(s3compaction.input, Context.PortContext.PARTITION_PARALLEL, isCompactionParallelPartition);
     S3Reconciler s3Reconciler = dag.addOperator("S3Reconciler", new S3Reconciler());
     s3Reconciler.setAccessKey(accessKey);
     s3Reconciler.setSecretKey(secretAccessKey);
@@ -132,16 +106,6 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
       s3Reconciler.setRegion(region);
     }
     s3Reconciler.setDirectoryName(outputDirectoryPath);
-
-    S3ReconcilerQueuePartitioner<org.apache.apex.malhar.lib.fs.s3.S3Reconciler> reconcilerPartitioner = new S3ReconcilerQueuePartitioner<org.apache.apex.malhar.lib.fs.s3.S3Reconciler>();
-    reconcilerPartitioner.setCooldownMillis(coolDownMillis);
-    reconcilerPartitioner.setMinPartitions(minS3UploadPartitions);
-    reconcilerPartitioner.setMaxPartitions(maxS3UploadPartitions);
-    reconcilerPartitioner.setMaxQueueSizePerPartition(maxQueueSizeS3Upload);
-
-    dag.setAttribute(s3Reconciler, OperatorContext.STATS_LISTENERS,
-      Arrays.asList(new StatsListener[] {reconcilerPartitioner}));
-    dag.setAttribute(s3Reconciler, OperatorContext.PARTITIONER, reconcilerPartitioner);
 
     dag.addStream("write-to-s3", s3compaction.output, s3Reconciler.input);
     input.set(s3compaction.input);
@@ -292,64 +256,22 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
     this.maxLength = maxLength;
   }
 
-  public long getMaxTuplesPerSecPerPartition()
+  /**
+   * Returns whether the compaction operator is parallel partitioned with the upstream operator
+   * @return isCompactionParallelPartition
+   */
+  public boolean isCompactionParallelPartition()
   {
-    return maxTuplesPerSecPerPartition;
+    return isCompactionParallelPartition;
   }
 
-  public void setMaxTuplesPerSecPerPartition(long maxTuplesPerSecPerPartition)
+  /**
+   * Sets whether the compaction operator would be partitioned parallel or not.
+   * @param compactionParallelPartition isCompactionParallelPartition
+   */
+  public void setCompactionParallelPartition(boolean compactionParallelPartition)
   {
-    this.maxTuplesPerSecPerPartition = maxTuplesPerSecPerPartition;
-  }
-
-  public long getMinTuplesPerSecPerPartition()
-  {
-    return minTuplesPerSecPerPartition;
-  }
-
-  public void setMinTuplesPerSecPerPartition(long minTuplesPerSecPerPartition)
-  {
-    this.minTuplesPerSecPerPartition = minTuplesPerSecPerPartition;
-  }
-
-  public long getCoolDownMillis()
-  {
-    return coolDownMillis;
-  }
-
-  public void setCoolDownMillis(long coolDownMillis)
-  {
-    this.coolDownMillis = coolDownMillis;
-  }
-
-  public int getMaxS3UploadPartitions()
-  {
-    return maxS3UploadPartitions;
-  }
-
-  public void setMaxS3UploadPartitions(int maxS3UploadPartitions)
-  {
-    this.maxS3UploadPartitions = maxS3UploadPartitions;
-  }
-
-  public int getMinS3UploadPartitions()
-  {
-    return minS3UploadPartitions;
-  }
-
-  public void setMinS3UploadPartitions(int minS3UploadPartitions)
-  {
-    this.minS3UploadPartitions = minS3UploadPartitions;
-  }
-
-  public int getMaxQueueSizeS3Upload()
-  {
-    return maxQueueSizeS3Upload;
-  }
-
-  public void setMaxQueueSizeS3Upload(int maxQueueSizeS3Upload)
-  {
-    this.maxQueueSizeS3Upload = maxQueueSizeS3Upload;
+    isCompactionParallelPartition = compactionParallelPartition;
   }
 
   /**

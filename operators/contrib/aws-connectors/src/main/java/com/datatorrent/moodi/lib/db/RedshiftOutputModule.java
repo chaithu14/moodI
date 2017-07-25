@@ -1,5 +1,6 @@
 package com.datatorrent.moodi.lib.db;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -9,12 +10,14 @@ import org.apache.hadoop.conf.Configuration;
 
 import com.google.common.base.Preconditions;
 
+import com.datatorrent.api.Context;
 import com.datatorrent.api.DAG;
 import com.datatorrent.api.Module;
 import com.datatorrent.lib.db.jdbc.JdbcTransactionalStore;
 import com.datatorrent.moodi.lib.io.fs.FSRecordCompactionOperator;
 import com.datatorrent.moodi.lib.io.fs.s3.S3MetricsTupleOutputModule;
 
+import static com.datatorrent.api.Context.OperatorContext.TIMEOUT_WINDOW_COUNT;
 import static com.datatorrent.moodi.lib.db.RedshiftOutputModule.READER_MODE.READ_FROM_S3;
 
 /**
@@ -41,6 +44,13 @@ public class RedshiftOutputModule implements Module
   private String emrClusterId;
   @NotNull
   private String redshiftDelimiter = DEFAULT_REDSHIFT_DELIMITER;
+  /**
+   * Specified as count of streaming windows. This value will set to the operators in this module because
+   * the operators in this module is mostly interacts with the Amazon Redshift.
+   * Due to this reason, window id of these operators might be lag behind with the upstream operators.
+   */
+  @Min(120)
+  private int timeOutWindowCount = 1200;
   protected static enum READER_MODE
   {
     READ_FROM_S3, READ_FROM_EMR;
@@ -61,12 +71,15 @@ public class RedshiftOutputModule implements Module
       tupleBasedS3.setSecretAccessKey(secretKey);
       tupleBasedS3.setBucketName(bucketName);
       tupleBasedS3.setOutputDirectoryPath(directoryName);
+      tupleBasedS3.setCompactionParallelPartition(true);
       if (maxLengthOfRollingFile != null) {
         tupleBasedS3.setMaxLength(maxLengthOfRollingFile);
       }
+
       input.set(tupleBasedS3.input);
 
       org.apache.apex.malhar.lib.db.redshift.RedshiftJdbcTransactionableOutputOperator redshiftOutput = dag.addOperator("LoadToRedshift", createRedshiftOperator());
+      dag.setAttribute(redshiftOutput, TIMEOUT_WINDOW_COUNT, timeOutWindowCount);
 
       dag.addStream("load-to-redshift", tupleBasedS3.output, redshiftOutput.input);
     } else {
@@ -75,10 +88,11 @@ public class RedshiftOutputModule implements Module
       if (maxLengthOfRollingFile != null) {
         hdfsWriteOperator.setMaxLength(maxLengthOfRollingFile);
       }
+      dag.setInputPortAttribute(hdfsWriteOperator.input, Context.PortContext.PARTITION_PARALLEL, true);
       input.set(hdfsWriteOperator.input);
 
       org.apache.apex.malhar.lib.db.redshift.RedshiftJdbcTransactionableOutputOperator redshiftOutput = dag.addOperator("LoadToRedshift", createRedshiftOperator());
-
+      dag.setAttribute(redshiftOutput, TIMEOUT_WINDOW_COUNT, timeOutWindowCount);
       dag.addStream("load-to-redshift", hdfsWriteOperator.output, redshiftOutput.input);
     }
   }
@@ -324,5 +338,23 @@ public class RedshiftOutputModule implements Module
   public void setStore(@NotNull JdbcTransactionalStore store)
   {
     this.store = Preconditions.checkNotNull(store);
+  }
+
+  /**
+   * Get the number of streaming windows for the operators which have stalled processing.
+   * @return the number of streaming windows
+   */
+  public int getTimeOutWindowCount()
+  {
+    return timeOutWindowCount;
+  }
+
+  /**
+   * Set the number of streaming windows.
+   * @param timeOutWindowCount given number of streaming windows for time out.
+   */
+  public void setTimeOutWindowCount(int timeOutWindowCount)
+  {
+    this.timeOutWindowCount = timeOutWindowCount;
   }
 }
