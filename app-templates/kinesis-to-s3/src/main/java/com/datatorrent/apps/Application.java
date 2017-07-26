@@ -37,6 +37,7 @@ public class Application implements StreamingApplication
     // Add Kinesis as input and S3 as output operators respectively to dag.
     KinesisByteArrayInputOperator inputModule = dag.addOperator("KinesisInput", new KinesisByteArrayInputOperator());
     S3MetricsTupleOutputModule.S3BytesOutputModule outputModule = dag.addModule("S3OutputModule", new S3MetricsTupleOutputModule.S3BytesOutputModule());
+    outputModule.setCompactionParallelPartition(true);
     // Create a stream for messages from Kinesis to S3
     dag.addStream("KinesisToS3", inputModule.outputPort, outputModule.input);
 

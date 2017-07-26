@@ -45,23 +45,18 @@
   </property>
 
   <property>
-    <name>apex.app-param.minimumReadersForDynamicPartitioning</name>
+    <name>apex.app-param.numberOfReadersForPartitioning</name>
     <value>2</value>
-    <description>Specify minimum readers for dynamic partitioning.</description>
-  </property>
-  <property>
-    <name>dt.operator.recordReader.prop.minReaders</name>
-    <value>${apex.app-param.minimumReadersForDynamicPartitioning}</value>
+    <description>Specify the number of readers for partitioning.</description>
   </property>
 
   <property>
-    <name>apex.app-param.maximumReadersForDynamicPartitioning</name>
-    <value>16</value>
-    <description>Specify maximum readers for dynamic partitioning.</description>
+    <name>dt.operator.recordReader.prop.minReaders</name>
+    <value>${apex.app-param.numberOfReadersForPartitioning}</value>
   </property>
   <property>
     <name>dt.operator.recordReader.prop.maxReaders</name>
-    <value>${apex.app-param.maximumReadersForDynamicPartitioning}</value>
+    <value>${apex.app-param.numberOfReadersForPartitioning}</value>
   </property>
 
   <property>

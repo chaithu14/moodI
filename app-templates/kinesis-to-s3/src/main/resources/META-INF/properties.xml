@@ -103,26 +103,6 @@
   </property>
 
   <property>
-    <name>apex.app-param.maxNoOfS3UploadPartitions</name>
-    <value>16</value>
-    <description>Indicates the maximum number of S3 Upload Partitions</description>
-  </property>
-  <property>
-    <name>dt.operator.S3OutputModule.prop.maxS3UploadPartitions</name>
-    <value>${apex.app-param.maxNoOfS3UploadPartitions}</value>
-  </property>
-
-  <property>
-    <name>apex.app-param.minNoOfS3UploadPartitions</name>
-    <value>1</value>
-    <description>Indicates the minimum number of S3 Upload Partitions</description>
-  </property>
-  <property>
-    <name>dt.operator.S3OutputModule.prop.minS3UploadPartitions</name>
-    <value>${apex.app-param.minNoOfS3UploadPartitions}</value>
-  </property>
-
-  <property>
     <name>apex.app-param.csvParserSchema</name>
     <value>{
       "separator": "|",

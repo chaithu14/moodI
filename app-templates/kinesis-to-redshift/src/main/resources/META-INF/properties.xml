@@ -124,7 +124,7 @@
 
   <property>
     <name>apex.app-param.maxLengthOfRollingFile</name>
-    <value>101200</value>
+    <value>1048576</value>
     <description>Specify the maximum length of rolling file in bytes. For eg: 134217728 (1MB)</description>
   </property>
   <property>

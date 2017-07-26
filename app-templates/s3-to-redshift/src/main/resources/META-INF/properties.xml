@@ -45,23 +45,20 @@
     <name>dt.operator.S3Input.prop.blockSize</name>
     <value>${apex.app-param.blockReaderSizeForS3Input}</value>
   </property>
+
   <property>
-    <name>apex.app-param.minReadersForS3Input</name>
+    <name>apex.app-param.numberOfReadersForPartitioning</name>
     <value>2</value>
-    <description>Specify minimum readers for dynamic partitioning.</description>
+    <description>Specify the number of readers for partitioning.</description>
   </property>
+
   <property>
     <name>dt.operator.S3Input.prop.minReaders</name>
-    <value>${apex.app-param.minReadersForS3Input}</value>
-  </property>
-  <property>
-    <name>apex.app-param.maxReadersForS3Input</name>
-    <value>16</value>
-    <description>Specify maximum readers for dynamic partitioning.</description>
+    <value>${apex.app-param.numberOfReadersForPartitioning}</value>
   </property>
   <property>
     <name>dt.operator.S3Input.prop.maxReaders</name>
-    <value>${apex.app-param.maxReadersForS3Input}</value>
+    <value>${apex.app-param.numberOfReadersForPartitioning}</value>
   </property>
   <property>
     <name>apex.app-param.numberOfBlocksPerWindow</name>
