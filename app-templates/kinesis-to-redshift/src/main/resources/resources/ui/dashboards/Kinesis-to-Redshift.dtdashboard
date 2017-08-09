@@ -1,9 +1,10 @@
 {
+  "ids": "application_1499808956620_1519",
   "user": "chaitanya",
   "name": "Kinesis-to-Redshift",
   "config": {
     "applications": [
-
+      
     ],
     "state": {
       "widgets": [
@@ -25,31 +26,24 @@
             "dataSource": {
               "displayName": "[HISTORICAL] OperatorMetrics(KinesisInput)  (user: chaitanya; app: Kinesis-to-Redshift)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(KinesisInput) ",
-              "context": {
-                "keys": {
-                  "appName": "Kinesis-to-Redshift",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "KinesisInput"
-                }
-              },
               "appName": "Kinesis-to-Redshift",
               "appUser": "chaitanya",
               "appPackageSource": {
                 "user": "chaitanya",
                 "name": "kinesis-to-redshift",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "Kinesis-to-Redshift"
               }
             },
@@ -204,12 +198,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -219,7 +211,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -495,7 +487,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -555,7 +547,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "bytesReadPerSecond",
                   "subcategory": "AVG"
                 }
@@ -777,7 +769,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -837,7 +829,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "bytesReadPerSecond",
                   "subcategory": "AVG"
                 }
@@ -963,7 +955,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -1202,7 +1194,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -1262,7 +1254,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "bytesReadPerSecond",
                   "subcategory": "AVG"
                 }
@@ -1274,7 +1266,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -1513,7 +1505,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -1573,7 +1565,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "bytesReadPerSecond",
                   "subcategory": "AVG"
                 }
@@ -1587,22 +1579,14 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "Kinesis-to-Redshift"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "KinesisInput"
-                  ]
+
                 },
                 "fields": [
                   "time",
                   "appName",
                   "appUser",
                   "logicalOperatorName",
-                  "bytesReadPerSecond:SUM"
+                  "bytesReadPerSecond:AVG"
                 ]
               },
               "incompleteResultOK": true,
@@ -1616,6 +1600,95 @@
             "loadingData": false,
             "tags": {
               "multiKeySelect": true
+            },
+            "id": "line_chart_j64xaj4l_0",
+            "legends": {
+              "data": {
+                "totalBytesRead:SUM": {
+                  "color": "#1f77b4"
+                },
+                "totalBytesRead:MIN": {
+                  "color": "#9edae5"
+                },
+                "totalBytesRead:MAX": {
+                  "color": "#17becf"
+                },
+                "totalBytesRead:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "totalBytesRead:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "totalBytesRead:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "totalBytesRead:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "eventsReadPerSecond:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "eventsReadPerSecond:MIN": {
+                  "color": "#e377c2"
+                },
+                "eventsReadPerSecond:MAX": {
+                  "color": "#c49c94"
+                },
+                "eventsReadPerSecond:COUNT": {
+                  "color": "#9467bd"
+                },
+                "eventsReadPerSecond:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "eventsReadPerSecond:LAST": {
+                  "color": "#8c564b"
+                },
+                "eventsReadPerSecond:AVG": {
+                  "color": "#ff9896"
+                },
+                "totalEventsRead:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalEventsRead:MIN": {
+                  "color": "#d62728"
+                },
+                "totalEventsRead:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalEventsRead:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalEventsRead:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalEventsRead:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalEventsRead:AVG": {
+                  "color": "#aec7e8"
+                },
+                "bytesReadPerSecond:SUM": {
+                  "color": "#d62728"
+                },
+                "bytesReadPerSecond:MIN": {
+                  "color": "#98df8a"
+                },
+                "bytesReadPerSecond:MAX": {
+                  "color": "#2ca02c"
+                },
+                "bytesReadPerSecond:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "bytesReadPerSecond:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "bytesReadPerSecond:LAST": {
+                  "color": "#ffbb78"
+                },
+                "bytesReadPerSecond:AVG": {
+                  "color": "#1f77b4"
+                }
+              }
             },
             "allowFetchData": true
           }
@@ -1638,31 +1711,24 @@
             "dataSource": {
               "displayName": "[HISTORICAL] OperatorMetrics(KinesisInput)  (user: chaitanya; app: Kinesis-to-Redshift)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(KinesisInput) ",
-              "context": {
-                "keys": {
-                  "appName": "Kinesis-to-Redshift",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "KinesisInput"
-                }
-              },
               "appName": "Kinesis-to-Redshift",
               "appUser": "chaitanya",
               "appPackageSource": {
                 "user": "chaitanya",
                 "name": "kinesis-to-redshift",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "Kinesis-to-Redshift"
               }
             },
@@ -1817,12 +1883,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -1832,7 +1896,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -1968,7 +2032,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -2028,7 +2092,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsReadPerSecond",
                   "subcategory": "AVG"
                 },
@@ -2250,7 +2314,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -2310,7 +2374,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsReadPerSecond",
                   "subcategory": "AVG"
                 },
@@ -2576,7 +2640,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -2675,7 +2739,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -2735,7 +2799,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsReadPerSecond",
                   "subcategory": "AVG"
                 },
@@ -2887,7 +2951,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -2986,7 +3050,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsReadPerSecond",
                   "subcategory": "SUM"
                 },
@@ -3046,7 +3110,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsReadPerSecond",
                   "subcategory": "AVG"
                 },
@@ -3200,22 +3264,14 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "Kinesis-to-Redshift"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "KinesisInput"
-                  ]
+
                 },
                 "fields": [
                   "time",
                   "appName",
                   "appUser",
                   "logicalOperatorName",
-                  "eventsReadPerSecond:SUM"
+                  "eventsReadPerSecond:AVG"
                 ]
               },
               "incompleteResultOK": true,
@@ -3229,6 +3285,95 @@
             "loadingData": false,
             "tags": {
               "multiKeySelect": true
+            },
+            "id": "line_chart_j64xcv4y_1",
+            "legends": {
+              "data": {
+                "totalBytesRead:SUM": {
+                  "color": "#1f77b4"
+                },
+                "totalBytesRead:MIN": {
+                  "color": "#9edae5"
+                },
+                "totalBytesRead:MAX": {
+                  "color": "#17becf"
+                },
+                "totalBytesRead:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "totalBytesRead:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "totalBytesRead:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "totalBytesRead:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "eventsReadPerSecond:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "eventsReadPerSecond:MIN": {
+                  "color": "#e377c2"
+                },
+                "eventsReadPerSecond:MAX": {
+                  "color": "#c49c94"
+                },
+                "eventsReadPerSecond:COUNT": {
+                  "color": "#9467bd"
+                },
+                "eventsReadPerSecond:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "eventsReadPerSecond:LAST": {
+                  "color": "#8c564b"
+                },
+                "eventsReadPerSecond:AVG": {
+                  "color": "#ff9896"
+                },
+                "totalEventsRead:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalEventsRead:MIN": {
+                  "color": "#d62728"
+                },
+                "totalEventsRead:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalEventsRead:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalEventsRead:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalEventsRead:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalEventsRead:AVG": {
+                  "color": "#aec7e8"
+                },
+                "bytesReadPerSecond:SUM": {
+                  "color": "#d62728"
+                },
+                "bytesReadPerSecond:MIN": {
+                  "color": "#98df8a"
+                },
+                "bytesReadPerSecond:MAX": {
+                  "color": "#2ca02c"
+                },
+                "bytesReadPerSecond:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "bytesReadPerSecond:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "bytesReadPerSecond:LAST": {
+                  "color": "#ffbb78"
+                },
+                "bytesReadPerSecond:AVG": {
+                  "color": "#1f77b4"
+                }
+              }
             },
             "allowFetchData": true
           }
@@ -3251,31 +3396,24 @@
             "dataSource": {
               "displayName": "[HISTORICAL] OperatorMetrics(JdbcOutput$LoadToRedshift)  (user: chaitanya; app: Kinesis-to-Redshift)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(JdbcOutput$LoadToRedshift) ",
-              "context": {
-                "keys": {
-                  "appName": "Kinesis-to-Redshift",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "JdbcOutput$LoadToRedshift"
-                }
-              },
               "appName": "Kinesis-to-Redshift",
               "appUser": "chaitanya",
               "appPackageSource": {
                 "user": "chaitanya",
                 "name": "kinesis-to-redshift",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "Kinesis-to-Redshift"
               }
             },
@@ -3486,12 +3624,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -3501,7 +3637,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -3847,7 +3983,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -3907,7 +4043,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "bytesWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -4259,7 +4395,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -4269,7 +4405,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -4581,7 +4717,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -4880,7 +5016,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -4890,7 +5026,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -5032,7 +5168,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -5331,7 +5467,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -5341,7 +5477,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "bytesWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -5485,22 +5621,14 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "Kinesis-to-Redshift"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "JdbcOutput$LoadToRedshift"
-                  ]
+
                 },
                 "fields": [
                   "time",
                   "appName",
                   "appUser",
                   "logicalOperatorName",
-                  "bytesWrittenPerSec:SUM"
+                  "bytesWrittenPerSec:AVG"
                 ]
               },
               "incompleteResultOK": true,
@@ -5514,6 +5642,137 @@
             "loadingData": false,
             "tags": {
               "multiKeySelect": true
+            },
+            "id": "line_chart_j64xpfl8_8",
+            "legends": {
+              "data": {
+                "totalBytesWritten:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalBytesWritten:MIN": {
+                  "color": "#d62728"
+                },
+                "totalBytesWritten:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalBytesWritten:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalBytesWritten:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalBytesWritten:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalBytesWritten:AVG": {
+                  "color": "#aec7e8"
+                },
+                "totalEventsWritten:SUM": {
+                  "color": "#7f7f7f"
+                },
+                "totalEventsWritten:MIN": {
+                  "color": "#f7b6d2"
+                },
+                "totalEventsWritten:MAX": {
+                  "color": "#e377c2"
+                },
+                "totalEventsWritten:COUNT": {
+                  "color": "#c5b0d5"
+                },
+                "totalEventsWritten:FIRST": {
+                  "color": "#8c564b"
+                },
+                "totalEventsWritten:LAST": {
+                  "color": "#c49c94"
+                },
+                "totalEventsWritten:AVG": {
+                  "color": "#9467bd"
+                },
+                "errorTuples:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "errorTuples:MIN": {
+                  "color": "#e377c2"
+                },
+                "errorTuples:MAX": {
+                  "color": "#c49c94"
+                },
+                "errorTuples:COUNT": {
+                  "color": "#9467bd"
+                },
+                "errorTuples:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "errorTuples:LAST": {
+                  "color": "#8c564b"
+                },
+                "errorTuples:AVG": {
+                  "color": "#ff9896"
+                },
+                "eventsWrittenPerSec:SUM": {
+                  "color": "#1f77b4"
+                },
+                "eventsWrittenPerSec:MIN": {
+                  "color": "#9edae5"
+                },
+                "eventsWrittenPerSec:MAX": {
+                  "color": "#17becf"
+                },
+                "eventsWrittenPerSec:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "eventsWrittenPerSec:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "eventsWrittenPerSec:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "eventsWrittenPerSec:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "bytesWrittenPerSec:SUM": {
+                  "color": "#d62728"
+                },
+                "bytesWrittenPerSec:MIN": {
+                  "color": "#98df8a"
+                },
+                "bytesWrittenPerSec:MAX": {
+                  "color": "#2ca02c"
+                },
+                "bytesWrittenPerSec:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "bytesWrittenPerSec:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "bytesWrittenPerSec:LAST": {
+                  "color": "#ffbb78"
+                },
+                "bytesWrittenPerSec:AVG": {
+                  "color": "#1f77b4"
+                },
+                "tuplesWrittenSuccessfully:SUM": {
+                  "color": "#aec7e8"
+                },
+                "tuplesWrittenSuccessfully:MIN": {
+                  "color": "#1f77b4"
+                },
+                "tuplesWrittenSuccessfully:MAX": {
+                  "color": "#9edae5"
+                },
+                "tuplesWrittenSuccessfully:COUNT": {
+                  "color": "#bcbd22"
+                },
+                "tuplesWrittenSuccessfully:FIRST": {
+                  "color": "#dbdb8d"
+                },
+                "tuplesWrittenSuccessfully:LAST": {
+                  "color": "#17becf"
+                },
+                "tuplesWrittenSuccessfully:AVG": {
+                  "color": "#c7c7c7"
+                }
+              }
             },
             "allowFetchData": true
           }
@@ -5536,31 +5795,24 @@
             "dataSource": {
               "displayName": "[HISTORICAL] OperatorMetrics(JdbcOutput$LoadToRedshift)  (user: chaitanya; app: Kinesis-to-Redshift)",
               "query": {
-                "operatorName": "DTMetricsHistQuery",
+                "operatorName": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistQuery"
+                "topic": "DTMetricsHistQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&"
               },
               "result": {
-                "operatorName": "DTMetricsHistResult",
+                "operatorName": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "url": "pubsub",
-                "topic": "DTMetricsHistResult",
+                "topic": "DTMetricsHistResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
                 "appendQIDToTopic": true
               },
               "type": "metrics",
               "name": "[HISTORICAL] OperatorMetrics(JdbcOutput$LoadToRedshift) ",
-              "context": {
-                "keys": {
-                  "appName": "Kinesis-to-Redshift",
-                  "appUser": "chaitanya",
-                  "logicalOperatorName": "JdbcOutput$LoadToRedshift"
-                }
-              },
               "appName": "Kinesis-to-Redshift",
               "appUser": "chaitanya",
               "appPackageSource": {
                 "user": "chaitanya",
                 "name": "kinesis-to-redshift",
-                "version": "0.9.0",
+                "version": "0.10.0",
                 "appName": "Kinesis-to-Redshift"
               }
             },
@@ -5771,12 +6023,10 @@
               "dimensions": [
                 {
                   "combination": [
-                    "appName",
-                    "appUser",
-                    "logicalOperatorName"
+
                   ],
                   "id": "0",
-                  "label": "appName, appUser, logicalOperatorName"
+                  "label": ""
                 }
               ],
               "timeFields": [
@@ -5786,7 +6036,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 }
               ],
               "keyFields": [
@@ -6062,7 +6312,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -6122,7 +6372,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -6484,7 +6734,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -6544,7 +6794,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -6866,7 +7116,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -7105,7 +7355,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -7165,7 +7415,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -7317,7 +7567,7 @@
                   "sort": "number",
                   "filter": "date",
                   "type": "date",
-                  "ngFilter": "date:'yyyy-MM-dd HH:mm:ss Z'"
+                  "ngFilter": "relativeTimestamp"
                 },
                 {
                   "key": "appName",
@@ -7556,7 +7806,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": true,
+                  "selected": false,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "SUM"
                 },
@@ -7616,7 +7866,7 @@
                   "type": "long",
                   "sort": "number",
                   "filter": "number",
-                  "selected": false,
+                  "selected": true,
                   "category": "eventsWrittenPerSec",
                   "subcategory": "AVG"
                 },
@@ -7770,22 +8020,14 @@
                 },
                 "incompleteResultOK": true,
                 "keys": {
-                  "appName": [
-                    "Kinesis-to-Redshift"
-                  ],
-                  "appUser": [
-                    "chaitanya"
-                  ],
-                  "logicalOperatorName": [
-                    "JdbcOutput$LoadToRedshift"
-                  ]
+
                 },
                 "fields": [
                   "time",
                   "appName",
                   "appUser",
                   "logicalOperatorName",
-                  "eventsWrittenPerSec:SUM"
+                  "eventsWrittenPerSec:AVG"
                 ]
               },
               "incompleteResultOK": true,
@@ -7800,12 +8042,886 @@
             "tags": {
               "multiKeySelect": true
             },
+            "id": "line_chart_j64xr507_9",
+            "legends": {
+              "data": {
+                "totalBytesWritten:SUM": {
+                  "color": "#ff9896"
+                },
+                "totalBytesWritten:MIN": {
+                  "color": "#d62728"
+                },
+                "totalBytesWritten:MAX": {
+                  "color": "#98df8a"
+                },
+                "totalBytesWritten:COUNT": {
+                  "color": "#ff7f0e"
+                },
+                "totalBytesWritten:FIRST": {
+                  "color": "#ffbb78"
+                },
+                "totalBytesWritten:LAST": {
+                  "color": "#2ca02c"
+                },
+                "totalBytesWritten:AVG": {
+                  "color": "#aec7e8"
+                },
+                "totalEventsWritten:SUM": {
+                  "color": "#7f7f7f"
+                },
+                "totalEventsWritten:MIN": {
+                  "color": "#f7b6d2"
+                },
+                "totalEventsWritten:MAX": {
+                  "color": "#e377c2"
+                },
+                "totalEventsWritten:COUNT": {
+                  "color": "#c5b0d5"
+                },
+                "totalEventsWritten:FIRST": {
+                  "color": "#8c564b"
+                },
+                "totalEventsWritten:LAST": {
+                  "color": "#c49c94"
+                },
+                "totalEventsWritten:AVG": {
+                  "color": "#9467bd"
+                },
+                "errorTuples:SUM": {
+                  "color": "#f7b6d2"
+                },
+                "errorTuples:MIN": {
+                  "color": "#e377c2"
+                },
+                "errorTuples:MAX": {
+                  "color": "#c49c94"
+                },
+                "errorTuples:COUNT": {
+                  "color": "#9467bd"
+                },
+                "errorTuples:FIRST": {
+                  "color": "#c5b0d5"
+                },
+                "errorTuples:LAST": {
+                  "color": "#8c564b"
+                },
+                "errorTuples:AVG": {
+                  "color": "#ff9896"
+                },
+                "eventsWrittenPerSec:SUM": {
+                  "color": "#1f77b4"
+                },
+                "eventsWrittenPerSec:MIN": {
+                  "color": "#9edae5"
+                },
+                "eventsWrittenPerSec:MAX": {
+                  "color": "#17becf"
+                },
+                "eventsWrittenPerSec:COUNT": {
+                  "color": "#c7c7c7"
+                },
+                "eventsWrittenPerSec:FIRST": {
+                  "color": "#bcbd22"
+                },
+                "eventsWrittenPerSec:LAST": {
+                  "color": "#dbdb8d"
+                },
+                "eventsWrittenPerSec:AVG": {
+                  "color": "#7f7f7f"
+                },
+                "bytesWrittenPerSec:SUM": {
+                  "color": "#d62728"
+                },
+                "bytesWrittenPerSec:MIN": {
+                  "color": "#98df8a"
+                },
+                "bytesWrittenPerSec:MAX": {
+                  "color": "#2ca02c"
+                },
+                "bytesWrittenPerSec:COUNT": {
+                  "color": "#aec7e8"
+                },
+                "bytesWrittenPerSec:FIRST": {
+                  "color": "#ff7f0e"
+                },
+                "bytesWrittenPerSec:LAST": {
+                  "color": "#ffbb78"
+                },
+                "bytesWrittenPerSec:AVG": {
+                  "color": "#1f77b4"
+                },
+                "tuplesWrittenSuccessfully:SUM": {
+                  "color": "#aec7e8"
+                },
+                "tuplesWrittenSuccessfully:MIN": {
+                  "color": "#1f77b4"
+                },
+                "tuplesWrittenSuccessfully:MAX": {
+                  "color": "#9edae5"
+                },
+                "tuplesWrittenSuccessfully:COUNT": {
+                  "color": "#bcbd22"
+                },
+                "tuplesWrittenSuccessfully:FIRST": {
+                  "color": "#dbdb8d"
+                },
+                "tuplesWrittenSuccessfully:LAST": {
+                  "color": "#17becf"
+                },
+                "tuplesWrittenSuccessfully:AVG": {
+                  "color": "#c7c7c7"
+                }
+              }
+            },
             "allowFetchData": true
+          }
+        },
+        {
+          "title": "Total Bytes Read From Kinesis",
+          "name": "snapshot single value",
+          "style": {
+
+          },
+          "size": {
+            "minHeight": "100px",
+            "minWidth": "200px",
+            "height": "100px",
+            "width": "25%"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[REALTIME] OperatorMetric(KinesisInput)  (user: chaitanya; app: Kinesis-to-Redshift)",
+              "query": {
+                "operatorName": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "url": "pubsub",
+                "topic": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&"
+              },
+              "result": {
+                "operatorName": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "url": "pubsub",
+                "topic": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[REALTIME] OperatorMetric(KinesisInput) ",
+              "appName": "Kinesis-to-Redshift",
+              "appUser": "chaitanya",
+              "appPackageSource": {
+                "user": "chaitanya",
+                "name": "kinesis-to-redshift",
+                "version": "0.10.0",
+                "appName": "Kinesis-to-Redshift"
+              }
+            },
+            "schema": {
+              "schemaKeys": {
+                "appName": "Kinesis-to-Redshift",
+                "appUser": "chaitanya",
+                "logicalOperatorName": "KinesisInput"
+              },
+              "values": [
+                {
+                  "name": "totalBytesRead",
+                  "type": "long"
+                },
+                {
+                  "name": "eventsReadPerSecond",
+                  "type": "long"
+                },
+                {
+                  "name": "totalEventsRead",
+                  "type": "long"
+                },
+                {
+                  "name": "bytesReadPerSecond",
+                  "type": "long"
+                }
+              ],
+              "schemaType": "snapshot",
+              "schemaVersion": "1.0",
+              "fields": [
+                {
+                  "key": "totalBytesRead",
+                  "id": "totalBytesRead",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "eventsReadPerSecond",
+                  "id": "eventsReadPerSecond",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "totalEventsRead",
+                  "id": "totalEventsRead",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "bytesReadPerSecond",
+                  "id": "bytesReadPerSecond",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "fields": [
+                  "totalBytesRead",
+                  "eventsReadPerSecond",
+                  "totalEventsRead",
+                  "bytesReadPerSecond"
+                ],
+                "schemaKeys": {
+                  "appName": "Kinesis-to-Redshift",
+                  "appUser": "chaitanya",
+                  "logicalOperatorName": "KinesisInput"
+                }
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true
+            },
+            "chart": {
+              "keyField": "totalBytesRead",
+              "valueFields": [
+                "totalBytesRead",
+                "eventsReadPerSecond",
+                "totalEventsRead",
+                "bytesReadPerSecond"
+              ],
+              "valueField": "totalBytesRead",
+              "valueLabel": "totalBytesRead",
+              "valueLabelPlacement": "above",
+              "valueFormat": "1234",
+              "colors": {
+                "flat": "#CCCCCC"
+              }
+            },
+            "sortOptions": {
+              "enabled": false,
+              "key": {
+                "name": "totalBytesRead",
+                "type": "long"
+              },
+              "direction": "asc"
+            },
+            "loadingData": true,
+            "id": "snapshot_single_value_j64xsgrj_10"
+          }
+        },
+        {
+          "title": "Total Events Read From Kinesis",
+          "name": "snapshot single value",
+          "style": {
+
+          },
+          "size": {
+            "minHeight": "100px",
+            "minWidth": "200px",
+            "height": "100px",
+            "width": "25%"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[REALTIME] OperatorMetric(KinesisInput)  (user: chaitanya; app: Kinesis-to-Redshift)",
+              "query": {
+                "operatorName": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "url": "pubsub",
+                "topic": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&KinesisInput&"
+              },
+              "result": {
+                "operatorName": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "url": "pubsub",
+                "topic": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&KinesisInput&",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[REALTIME] OperatorMetric(KinesisInput) ",
+              "appName": "Kinesis-to-Redshift",
+              "appUser": "chaitanya",
+              "appPackageSource": {
+                "user": "chaitanya",
+                "name": "kinesis-to-redshift",
+                "version": "0.10.0",
+                "appName": "Kinesis-to-Redshift"
+              }
+            },
+            "schema": {
+              "schemaKeys": {
+                "appName": "Kinesis-to-Redshift",
+                "appUser": "chaitanya",
+                "logicalOperatorName": "KinesisInput"
+              },
+              "values": [
+                {
+                  "name": "totalBytesRead",
+                  "type": "long"
+                },
+                {
+                  "name": "eventsReadPerSecond",
+                  "type": "long"
+                },
+                {
+                  "name": "totalEventsRead",
+                  "type": "long"
+                },
+                {
+                  "name": "bytesReadPerSecond",
+                  "type": "long"
+                }
+              ],
+              "schemaType": "snapshot",
+              "schemaVersion": "1.0",
+              "fields": [
+                {
+                  "key": "totalBytesRead",
+                  "id": "totalBytesRead",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "eventsReadPerSecond",
+                  "id": "eventsReadPerSecond",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "totalEventsRead",
+                  "id": "totalEventsRead",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "bytesReadPerSecond",
+                  "id": "bytesReadPerSecond",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "fields": [
+                  "totalBytesRead",
+                  "eventsReadPerSecond",
+                  "totalEventsRead",
+                  "bytesReadPerSecond"
+                ],
+                "schemaKeys": {
+                  "appName": "Kinesis-to-Redshift",
+                  "appUser": "chaitanya",
+                  "logicalOperatorName": "KinesisInput"
+                }
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true
+            },
+            "chart": {
+              "keyField": "totalBytesRead",
+              "valueFields": [
+                "totalBytesRead",
+                "eventsReadPerSecond",
+                "totalEventsRead",
+                "bytesReadPerSecond"
+              ],
+              "valueField": "totalEventsRead",
+              "valueLabel": "totalEventsRead",
+              "valueLabelPlacement": "above",
+              "valueFormat": "1234",
+              "colors": {
+                "flat": "#CCCCCC"
+              },
+              "valueLabelOverride": true
+            },
+            "sortOptions": {
+              "enabled": false,
+              "key": {
+                "name": "totalBytesRead",
+                "type": "long"
+              },
+              "direction": "asc"
+            },
+            "loadingData": true,
+            "id": "snapshot_single_value_j64xthof_11"
+          }
+        },
+        {
+          "title": "Total Bytes Written To Redshift",
+          "name": "snapshot single value",
+          "style": {
+
+          },
+          "size": {
+            "minHeight": "100px",
+            "minWidth": "200px",
+            "height": "100px",
+            "width": "25%"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[REALTIME] OperatorMetric(JdbcOutput$LoadToRedshift)  (user: chaitanya; app: Kinesis-to-Redshift)",
+              "query": {
+                "operatorName": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "url": "pubsub",
+                "topic": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&"
+              },
+              "result": {
+                "operatorName": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "url": "pubsub",
+                "topic": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[REALTIME] OperatorMetric(JdbcOutput$LoadToRedshift) ",
+              "appName": "Kinesis-to-Redshift",
+              "appUser": "chaitanya",
+              "appPackageSource": {
+                "user": "chaitanya",
+                "name": "kinesis-to-redshift",
+                "version": "0.10.0",
+                "appName": "Kinesis-to-Redshift"
+              }
+            },
+            "schema": {
+              "schemaKeys": {
+                "appName": "Kinesis-to-Redshift",
+                "appUser": "chaitanya",
+                "logicalOperatorName": "JdbcOutput$LoadToRedshift"
+              },
+              "values": [
+                {
+                  "name": "totalBytesWritten",
+                  "type": "long"
+                },
+                {
+                  "name": "totalEventsWritten",
+                  "type": "long"
+                },
+                {
+                  "name": "errorTuples",
+                  "type": "long"
+                },
+                {
+                  "name": "eventsWrittenPerSec",
+                  "type": "long"
+                },
+                {
+                  "name": "bytesWrittenPerSec",
+                  "type": "long"
+                },
+                {
+                  "name": "tuplesWrittenSuccessfully",
+                  "type": "long"
+                }
+              ],
+              "schemaType": "snapshot",
+              "schemaVersion": "1.0",
+              "fields": [
+                {
+                  "key": "totalBytesWritten",
+                  "id": "totalBytesWritten",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "totalEventsWritten",
+                  "id": "totalEventsWritten",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "errorTuples",
+                  "id": "errorTuples",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "eventsWrittenPerSec",
+                  "id": "eventsWrittenPerSec",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "bytesWrittenPerSec",
+                  "id": "bytesWrittenPerSec",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "tuplesWrittenSuccessfully",
+                  "id": "tuplesWrittenSuccessfully",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "fields": [
+                  "totalBytesWritten",
+                  "totalEventsWritten",
+                  "errorTuples",
+                  "eventsWrittenPerSec",
+                  "bytesWrittenPerSec",
+                  "tuplesWrittenSuccessfully"
+                ],
+                "schemaKeys": {
+                  "appName": "Kinesis-to-Redshift",
+                  "appUser": "chaitanya",
+                  "logicalOperatorName": "JdbcOutput$LoadToRedshift"
+                }
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true
+            },
+            "chart": {
+              "keyField": "totalBytesWritten",
+              "valueFields": [
+                "totalBytesWritten",
+                "totalEventsWritten",
+                "errorTuples",
+                "eventsWrittenPerSec",
+                "bytesWrittenPerSec",
+                "tuplesWrittenSuccessfully"
+              ],
+              "valueField": "totalBytesWritten",
+              "valueLabel": "totalBytesWritten",
+              "valueLabelPlacement": "above",
+              "valueFormat": "1234",
+              "colors": {
+                "flat": "#CCCCCC"
+              }
+            },
+            "sortOptions": {
+              "enabled": false,
+              "key": {
+                "name": "totalBytesWritten",
+                "type": "long"
+              },
+              "direction": "asc"
+            },
+            "loadingData": true,
+            "id": "snapshot_single_value_j64xu5xt_12"
+          }
+        },
+        {
+          "title": "Total Events Written To Redshift",
+          "name": "snapshot single value",
+          "style": {
+
+          },
+          "size": {
+            "minHeight": "100px",
+            "minWidth": "200px",
+            "height": "100px",
+            "width": "25%"
+          },
+          "dataModelOptions": {
+            "dataSource": {
+              "displayName": "[REALTIME] OperatorMetric(JdbcOutput$LoadToRedshift)  (user: chaitanya; app: Kinesis-to-Redshift)",
+              "query": {
+                "operatorName": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "url": "pubsub",
+                "topic": "DTMetricsQuery&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&"
+              },
+              "result": {
+                "operatorName": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "url": "pubsub",
+                "topic": "DTMetricsResult&Kinesis-to-Redshift&chaitanya&JdbcOutput$LoadToRedshift&",
+                "appendQIDToTopic": true
+              },
+              "type": "metrics",
+              "name": "[REALTIME] OperatorMetric(JdbcOutput$LoadToRedshift) ",
+              "appName": "Kinesis-to-Redshift",
+              "appUser": "chaitanya",
+              "appPackageSource": {
+                "user": "chaitanya",
+                "name": "kinesis-to-redshift",
+                "version": "0.10.0",
+                "appName": "Kinesis-to-Redshift"
+              }
+            },
+            "schema": {
+              "schemaKeys": {
+                "appName": "Kinesis-to-Redshift",
+                "appUser": "chaitanya",
+                "logicalOperatorName": "JdbcOutput$LoadToRedshift"
+              },
+              "values": [
+                {
+                  "name": "totalBytesWritten",
+                  "type": "long"
+                },
+                {
+                  "name": "totalEventsWritten",
+                  "type": "long"
+                },
+                {
+                  "name": "errorTuples",
+                  "type": "long"
+                },
+                {
+                  "name": "eventsWrittenPerSec",
+                  "type": "long"
+                },
+                {
+                  "name": "bytesWrittenPerSec",
+                  "type": "long"
+                },
+                {
+                  "name": "tuplesWrittenSuccessfully",
+                  "type": "long"
+                }
+              ],
+              "schemaType": "snapshot",
+              "schemaVersion": "1.0",
+              "fields": [
+                {
+                  "key": "totalBytesWritten",
+                  "id": "totalBytesWritten",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "totalEventsWritten",
+                  "id": "totalEventsWritten",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "errorTuples",
+                  "id": "errorTuples",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "eventsWrittenPerSec",
+                  "id": "eventsWrittenPerSec",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "bytesWrittenPerSec",
+                  "id": "bytesWrittenPerSec",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "key": "tuplesWrittenSuccessfully",
+                  "id": "tuplesWrittenSuccessfully",
+                  "type": "long",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ],
+              "fieldSelectionOptions": {
+                "initialSorts": [
+                  {
+                    "id": "id",
+                    "dir": "+"
+                  }
+                ],
+                "bgSizeMultiplier": "2",
+                "defaultRowHeight": "29",
+                "loading": false
+              },
+              "fieldSelectionColumns": [
+                {
+                  "id": "selector",
+                  "key": "id",
+                  "label": "",
+                  "selector": true,
+                  "width": "40px",
+                  "lockWidth": true
+                },
+                {
+                  "id": "id",
+                  "key": "id",
+                  "sort": "string",
+                  "filter": "like"
+                },
+                {
+                  "id": "type",
+                  "key": "type",
+                  "sort": "string",
+                  "filter": "like"
+                }
+              ]
+            },
+            "dataQueryParams": {
+              "data": {
+                "fields": [
+                  "totalBytesWritten",
+                  "totalEventsWritten",
+                  "errorTuples",
+                  "eventsWrittenPerSec",
+                  "bytesWrittenPerSec",
+                  "tuplesWrittenSuccessfully"
+                ],
+                "schemaKeys": {
+                  "appName": "Kinesis-to-Redshift",
+                  "appUser": "chaitanya",
+                  "logicalOperatorName": "JdbcOutput$LoadToRedshift"
+                }
+              },
+              "incompleteResultOK": true,
+              "getDataContinuously": true
+            },
+            "chart": {
+              "keyField": "totalBytesWritten",
+              "valueFields": [
+                "totalBytesWritten",
+                "totalEventsWritten",
+                "errorTuples",
+                "eventsWrittenPerSec",
+                "bytesWrittenPerSec",
+                "tuplesWrittenSuccessfully"
+              ],
+              "valueField": "totalEventsWritten",
+              "valueLabel": "totalEventsWritten",
+              "valueLabelPlacement": "above",
+              "valueFormat": "1234",
+              "colors": {
+                "flat": "#CCCCCC"
+              },
+              "valueLabelOverride": true
+            },
+            "sortOptions": {
+              "enabled": false,
+              "key": {
+                "name": "totalBytesWritten",
+                "type": "long"
+              },
+              "direction": "asc"
+            },
+            "loadingData": true,
+            "id": "snapshot_single_value_j64xv4px_13"
           }
         }
       ]
     }
   },
   "id": "chaitanya:Kinesis-to-Redshift",
-  "mtime": "2017-06-28T10:48:38.879Z"
+  "mtime": "2017-08-09T11:36:43.727Z",
+  "index": "14"
 }
