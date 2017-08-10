@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.moodi.lib.db;
 
 import org.apache.apex.malhar.lib.fs.FSRecordCompactionOperator;
@@ -5,6 +12,7 @@ import org.apache.apex.malhar.lib.fs.FSRecordCompactionOperator;
 import com.datatorrent.api.AutoMetric;
 import com.datatorrent.api.Context;
 
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class RedshiftJdbcTransactionableOutputOperator extends org.apache.apex.malhar.lib.db.redshift.RedshiftJdbcTransactionableOutputOperator
 {
   @AutoMetric

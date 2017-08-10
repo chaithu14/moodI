@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.moodi.kinesis;
 
 import com.amazonaws.services.kinesis.model.Record;
@@ -11,6 +18,7 @@ import com.datatorrent.common.util.Pair;
  * It emits the bytesReadPerSecond, bytesRead, eventsRead, eventsReadPerSecond metrics.
  *
  */
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class KinesisByteArrayInputOperator extends com.datatorrent.contrib.kinesis.KinesisByteArrayInputOperator
 {
   @AutoMetric

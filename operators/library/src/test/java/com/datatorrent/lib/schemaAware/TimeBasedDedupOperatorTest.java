@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.lib.schemaAware;
 
 import java.io.IOException;
@@ -20,6 +27,7 @@ import com.datatorrent.schema.api.SchemaExtended;
 import com.datatorrent.schema.util.TupleSchemaRegistry;
 import com.datatorrent.stram.engine.PortContext;
 
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class TimeBasedDedupOperatorTest
 {
 

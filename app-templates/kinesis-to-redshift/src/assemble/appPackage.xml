@@ -1,3 +1,10 @@
+<!--
+  ~ Copyright (c) 2012-2017 DataTorrent, Inc.
+  ~ All Rights Reserved.
+  ~ The use of this source code is governed by the Limited License located at
+  ~ https://www.datatorrent.com/datatorrent-openview-software-license/
+  -->
+
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
@@ -36,6 +43,14 @@
     <fileSet>
       <directory>${basedir}/src/main/resources/resources</directory>
       <outputDirectory>/resources</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>${basedir}/</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>LICENSE</include>
+        <include>REDSHIFTLICENSE</include>
+      </includes>
     </fileSet>
   </fileSets>
 

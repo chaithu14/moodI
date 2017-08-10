@@ -1,9 +1,17 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.moodi.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 import com.datatorrent.api.AutoMetric;
 
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class KafkaSinglePortInputOperator extends org.apache.apex.malhar.kafka.KafkaSinglePortInputOperator
 {
 

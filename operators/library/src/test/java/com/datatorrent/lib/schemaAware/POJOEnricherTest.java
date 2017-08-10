@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.lib.schemaAware;
 
 import java.io.IOException;
@@ -14,6 +21,7 @@ import com.datatorrent.api.Operator.InputPort;
 import com.datatorrent.api.Operator.OutputPort;
 import com.datatorrent.schema.api.Schema;
 
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class POJOEnricherTest
 {
   private static POJOEnricher enrich = new POJOEnricher();

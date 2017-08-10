@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.lib.schemaAware;
 
 import java.io.IOException;
@@ -18,6 +25,7 @@ import com.datatorrent.lib.util.KeyValPair;
 import com.datatorrent.schema.api.Schema;
 import com.datatorrent.schema.api.SchemaExtended;
 
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class JsonParserTest
 {
   static JsonParser parser = new JsonParser();

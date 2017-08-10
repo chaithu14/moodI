@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2012-2017 DataTorrent, Inc.
+ * All Rights Reserved.
+ * The use of this source code is governed by the Limited License located at
+ * https://www.datatorrent.com/datatorrent-openview-software-license/
+ */
+
 package com.datatorrent.moodi.lib.io.db;
 
 import com.datatorrent.api.AutoMetric;
@@ -8,6 +15,7 @@ import com.datatorrent.api.Context;
  * It emits the bytesWrittenPerSecond, bytesWritten, totalEventsWritten, eventsWrittenPerSecond metrics.
  *
  */
+@org.apache.hadoop.classification.InterfaceStability.Evolving
 public class JdbcPOJOInsertOutputOperator extends com.datatorrent.lib.db.jdbc.JdbcPOJOInsertOutputOperator
 {
   @AutoMetric
