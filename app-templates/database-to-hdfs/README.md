@@ -15,12 +15,12 @@ Import the application from DataTorrent AppHub and launch it to ingest your data
 ### Quickstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=KQchMhLJZGk) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/KQchMhLJZGk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/KQchMhLJZGk?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" style="position: relative;" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
 Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=Ltq520gzAuU) to add custom logic to the application template.
 
-<iframe src="https://www.youtube.com/embed/Ltq520gzAuU?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="advancedVideo" ga-track="advancedVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/Ltq520gzAuU?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" style="position: relative;" id="advancedVideo" ga-track="advancedVideo"></iframe>
 
 ### Logical Plan
 

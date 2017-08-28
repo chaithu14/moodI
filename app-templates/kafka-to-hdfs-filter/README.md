@@ -15,7 +15,7 @@ Import the application from DataTorrent AppHub and launch it to read your data f
 ### Quickstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](https://www.youtube.com/watch?v=taHc_QJUfBg) to import and launch the application.
 
-<iframe src="https://www.youtube.com/embed/taHc_QJUfBg?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="https://www.youtube.com/embed/taHc_QJUfBg?enablejsapi=1" allowfullscreen="allowfullscreen" class="video" style="position: relative;" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Productize
 Add custom logic to the application template and launch. Please watch the [walkthrough video](https://www.youtube.com/watch?v=S6CB4XgRHCE) to add custom logic to the application template.

@@ -11,7 +11,7 @@ Import the application from DataTorrent AppHub and launch it to ingest data from
 ### Quickstart
 Import and run application template as an operable proof of concept. Please watch the [walkthrough video](Update link location here) to import and launch the application.
 
-<iframe src="Update link location here" allowfullscreen="allowfullscreen" class="video" id="basicVideo" ga-track="basicVideo"></iframe>
+<iframe src="Update link location here" allowfullscreen="allowfullscreen" class="video" style="position: relative;" id="basicVideo" ga-track="basicVideo"></iframe>
 
 ### Logical Plan
 
