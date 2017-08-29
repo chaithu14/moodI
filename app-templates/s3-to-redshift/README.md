@@ -13,7 +13,7 @@ Import the application from DataTorrent AppFactory and launch it to ingest recor
 
 ## Implementation details
 - Logical flow diagram
-![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2016/12/db_to_db_sync_DAG.png)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/08/s3-to-redshift-logical-dag.png)
 
 - It uses following operators
   - S3RecordReaderWrapperModule Input operator (Read from Amazon S3)

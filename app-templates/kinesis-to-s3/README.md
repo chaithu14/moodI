@@ -15,7 +15,7 @@ Import the application from DataTorrent AppFactory and launch it to ingest recor
 
 ## Implementation details
 - Logical flow diagram
-![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/08/kinesis-to-redshift-dag.png)
+![Logical Plan](https://www.datatorrent.com/wp-content/uploads/2017/04/Kinesis_to_S3_DAG.jpg)
 
 - It uses following operators
   - KinesisByteArrayInputOperator Input operator (Read from AWS Kinesis)

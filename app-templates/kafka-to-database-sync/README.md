@@ -9,7 +9,7 @@ The Kafka to Database Sync Application ingest string messages seperated by '|' f
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
 - It is extremely easy to add custom logic to get your business value without worrying about database connectivity and operational details of database poller and database writer.
-- The only configuration user needs to provide is source kafka broker lists and database connection details, table.
+- The only configuration user needs to provide is source Kafka topics, Kafka broker lists and database connection details, table.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
 Import the application from DataTorrent AppFactory and launch it to ingest string messages seperated by '|' from configured kafka topic and writes each message as a record in PostgreSQL DataBase. Please follow the walkthrough document below to understand the configurable properties. Moreover, one could easily add customized business logic to further process the data during sync.

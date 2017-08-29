@@ -7,7 +7,7 @@ It continuously ingests messages based on a configured topic from a Kafka cluste
 - The application is fault tolerant and can withstand node and cluster outages without data loss.
 - The application is also highly performant and can process as fast as the network allows.
 - It is extremely easy to add custom logic to get your business value without worrying about database connectivity and operational details of database writer.
-- The only configuration user needs to provide is source Kafka broker lists and Cassandra database details like node, table and keyspace.
+- The only configuration user needs to provide is source Kafka topics, Kafka broker lists and Cassandra database details like node, table and keyspace.
 - This enterprise grade application template will dramatically reduce your time to market and cost of operations.
 
 Import the application from DataTorrent AppFactory and launch it to ingest messages in JSON string format from configured Kafka topic. It would write each transformed message as a record in Cassandra store. Please follow the walkthrough document below to understand the configurable properties. Moreover, one could easily add customized business logic to process the data during ingestion.
@@ -20,6 +20,7 @@ Import the application from DataTorrent AppFactory and launch it to ingest messa
   - KafkaSinglePortInputOperator Input operator (Read from source Kafka Cluster)
   - JsonParser Operator (Parser)
   - FilterOperator Operator (Filter)
+  - Transform Operator (Transform)
   - CassandraOutputOperator Output Operator (Write to destination Cassandra Cluster)  
 - Supported data source
   - Apache Kafka version 0.9.0.x

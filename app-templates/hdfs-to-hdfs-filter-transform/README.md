@@ -20,6 +20,7 @@ Import the application from DataTorrent AppFactory and launch it to ingest data 
   - FSRecordReaderModule Input operator (Read from source Hadoop Cluster)
   - CsvParser Operator (Parser)
   - FilterOperator Operator (Filter)
+  - Transform Operator (Transform)
   - CsvFormatter Operator (Formatter)
   - StringFileOutputOperator Output Operator (Write to destination Hadoop Cluster)  
 - Supported data source
