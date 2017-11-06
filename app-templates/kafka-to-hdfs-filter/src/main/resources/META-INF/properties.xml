@@ -62,6 +62,15 @@
     <name>dt.operator.fileOutput.prop.outputFileName</name>
     <value>${apex.app-param.outputFileName}</value>
   </property>
+  <property>
+    <name>apex.app-param.SizeOfFileInBytes</name>
+    <description>Specify the size of file in bytes. By default, the size is 128 MB</description>
+    <value>134217728</value>
+  </property>
+  <property>
+    <name>dt.operator.fileOutput.prop.maxLength</name>
+    <value>${apex.app-param.SizeOfFileInBytes}</value>
+  </property>
 
   <property>
     <name>apex.app-param.csvParserSchema</name>

@@ -88,6 +88,22 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
   @Min(1)
   protected Long maxLength = 128 * 1024 * 1024L;
 
+  /**
+   * The stream is expired (closed and evicted from cache) after the specified duration has passed since it was last
+   * accessed by a read or write.
+   */
+  private Long expireStreamAfterAccessMillis;
+
+  /**
+   * The files are rotated periodically after the specified value of windows have ended. If set to 0 this feature is
+   * disabled.
+   */
+  protected Integer rotationWindows;
+
+  /**
+   * Separator between the tuples
+   */
+  private String tupleSeparator;
 
   /**
    * Minimum number of tuples per sec per partition for HDFS write.
@@ -103,6 +119,15 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
     s3compaction.setConverter(getConverter());
     s3compaction.setMaxIdleWindows(maxIdleWindows);
     s3compaction.setMaxLength(maxLength);
+    if (expireStreamAfterAccessMillis != null) {
+      s3compaction.setExpireStreamAfterAccessMillis(expireStreamAfterAccessMillis);
+    }
+    if (rotationWindows != null) {
+      s3compaction.setRotationWindows(rotationWindows);
+    }
+    if (tupleSeparator != null) {
+      s3compaction.setTupleSeparator(tupleSeparator);
+    }
 
     dag.setInputPortAttribute(s3compaction.input, Context.PortContext.PARTITION_PARALLEL, isCompactionParallelPartition);
     S3Reconciler s3Reconciler = dag.addOperator("S3Reconciler", new S3Reconciler());
@@ -279,6 +304,60 @@ public abstract class S3MetricsTupleOutputModule<INPUT> implements Module
   public void setCompactionParallelPartition(boolean compactionParallelPartition)
   {
     isCompactionParallelPartition = compactionParallelPartition;
+  }
+
+  /**
+   * Returns the duration of stream expired in milliseconds
+   * @return expireStreamAfterAccessMillis
+   */
+  public Long getExpireStreamAfterAccessMillis()
+  {
+    return expireStreamAfterAccessMillis;
+  }
+
+  /**
+   * Sets the duration of stream expired in milliseconds
+   * @param expireStreamAfterAccessMillis given expireStreamAfterAccessMillis
+   */
+  public void setExpireStreamAfterAccessMillis(Long expireStreamAfterAccessMillis)
+  {
+    this.expireStreamAfterAccessMillis = expireStreamAfterAccessMillis;
+  }
+
+  /**
+   * Returns the file rotation interval.
+   * @return rotationWindows
+   */
+  public Integer getRotationWindows()
+  {
+    return rotationWindows;
+  }
+
+  /**
+   * Sets the file rotation interval.
+   * @param rotationWindows given rotationWindows
+   */
+  public void setRotationWindows(Integer rotationWindows)
+  {
+    this.rotationWindows = rotationWindows;
+  }
+
+  /**
+   * Return the tuple separator string
+   * @return tupleSeparator
+   */
+  public String getTupleSeparator()
+  {
+    return tupleSeparator;
+  }
+
+  /**
+   * Sets the tuple separator string
+   * @param tupleSeparator given tupleSeparator
+   */
+  public void setTupleSeparator(String tupleSeparator)
+  {
+    this.tupleSeparator = tupleSeparator;
   }
 
   /**
