@@ -25,6 +25,7 @@
 
   <properties>
     <!-- change this if you desire to use a different version of Apex Core -->
+    <malhar.version>3.9.0-SNAPSHOT</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, kinesis, s3</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>

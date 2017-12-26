@@ -25,6 +25,7 @@
   <description>Ingest records from AWS kinesis streams and writes them to AWS Redshift database.</description>
 
   <properties>
+    <malhar.version>3.9.0-SNAPSHOT</malhar.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
     <apex.apppackage.tags>app-template, redshift, kinesis</apex.apppackage.tags>
     <apex.apppackage.longDescription>README.md</apex.apppackage.longDescription>
